@@ -1,0 +1,40 @@
+<div class="col-md-12" ng-controller="loanController as vm">
+    <div class="panel">
+        <div class="panel-heading">
+            <div class="panel-title"> <i class="fa fa-plus"></i> Add New Loan Type </div>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal" role="form" ng-submit="vm.saveLoanType(loan)">
+                <div class="col-md-12">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input id="name" name="name" type="text"   ng-model="loan.name" class="form-control" placeholder="Name" required="">
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-5">
+
+                        <div class="form-group">
+                            <label for="code">Code:</label>
+                            <input  id="code" name="code" type="text" ng-model="loan.code" class="form-control" placeholder="Code" required="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-6 col-lg-offset-3">
+                        <div class="col-sm-12 form-group text-center">
+                            <input class="btn btn-primary"  type="submit" value="Register">
+                            <input class="btn btn-warning"  type="reset" value="Reset">
+                            <a class="btn btn-danger"  href="#/settings/loans"  >Cancel</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="col-md-12">
+                <div class="alert alert-success " ng-if="success">Loan <b> {{current.name}}</b> Registered Successfully.</div>
+                <div class="alert alert-warning" ng-if="failure">Loan <b> {{current.name}} </b> Fail Registration.</div>
+            </div>
+        </div>
+    </div>
+</div>
