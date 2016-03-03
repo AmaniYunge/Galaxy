@@ -31,10 +31,8 @@
             <td>{{assessment.minimum_score}}</td>
             <td  class=" ">
                 <a href="#/settings/interview/more/{{assessment.id}}" title="View Assessment" class="edituser"><i class="fa fa-list text-success"></i> more</a>&nbsp;&nbsp;&nbsp;
-                <a href="#/settings/interview/edit" title="Edit Assessment" class="edit_assess"><i class="fa fa-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
+                <a href="#/settings/interview/{{assessment.id}}/edit" title="Edit Assessment" class="edit_assess"><i class="fa fa-edit"></i> Edit</a>&nbsp;&nbsp;&nbsp;
                 <a href="#/settings/interview/delete" title="Delete Assessment" class="delete_assess"><i class="fa fa-times text-danger"></i> Delete</a>&nbsp;&nbsp;&nbsp;
-                <!--<a style="cursor: pointer;" ng-if="application.status=='pending'" ng-click="declineApplication(application.id)" title="edit Staff" class="edituser"><i class="fa fa-times  text-danger"></i> decline</a>-->
-                <!--<a style="cursor: pointer;" ng-if="application.status=='declined'" ng-click="acceptDeclinedApplication(application.id)" title="edit Staff" class="edituser"><i class="fa fa-thumbs-up  text-info"></i> accept</a>-->
 
             </td>
         </tr>

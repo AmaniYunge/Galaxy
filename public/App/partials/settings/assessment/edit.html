@@ -1,10 +1,46 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<div class="panel"  ng-controller="assessmentController as assess">
+    <div class="panel-heading">
+        <div class="panel-title"> <i class="fa fa-plus"></i> Edit Assessment </div>
+    </div>
+    <div class="panel-body" >
+        <form class="form-horizontal" role="form" ng-submit="assess.saveAssessment(assessment)">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="assessment_name">Assessment Name</label>
+                    <select class="form-control" id="assessment_name" ng-model="assessment.assessment_name" required="">
+                        <option selected="=selected" disabled="disabled">-- Select Assessment --</option>
+                        <option name="Qualitative Assessment">Qualitative Assessment</option>
+                        <option name="Quantitative Assessment">Quantitative Assessment</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="loan_type">Loan Type</label>
+                    <select id="loan_type" name="loan_id" type="text"   ng-model="assessment.loan_id" class="form-control" required="">
+                        <option selected="selected" disabled="disabled" >-- Select Loan Type --</option>
+                        <option ng-repeat="loan in loans" value="{{loan.id}}">{{loan.name}} ({{loan.code}})</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="minimum_score">Minimum Score</label>
+                    <input id="minimum_score" name="minimum_score" type="text"   ng-model="assessment.minimum_score" class="form-control" required="" />
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-sm-12 form-group text-center">
+                    <input class="btn btn-primary"  type="submit" value="Update">
+                    <input class="btn btn-warning"  type="reset" value="Reset">
+                    <a class="btn btn-danger"  ng-click="assess.cancelAdd()"  >Cancel</a>
+                </div>
 
-</body>
-</html>
+            </div>
+        </form>
+        <div class="col-md-12">
+            <div class="alert alert-success " ng-if="success">Assessment <b> {{current.assessment_name}} </b> Registered Successfully.</div>
+            <div class="alert alert-warning" ng-if="failure">Assessment <b> {{current.assessment_name}} </b> Fail Registration.</div>
+        </div>
+    </div>
+</div>

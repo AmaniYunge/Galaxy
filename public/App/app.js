@@ -51,6 +51,11 @@
                 templateUrl: "public/App/partials/settings/applicants/assessments/add.html",
                 controller:"applicantController"
             })
+            .when('/applicant/:id/interview/edit', {
+                templateUrl: "public/App/partials/settings/applicants/assessments/edit.html",
+                controller:"applicantController"
+            })
+
             .when('/applicant/:id/edit', {
                 templateUrl: "public/App/partials/settings/applicants/edit.html",
                 controller:"applicantController"
@@ -110,7 +115,7 @@
                 templateUrl: "public/App/partials/settings/assessment/add.html",
                 controller:"assessmentController"
             })
-            .when('/settings/interview/edit', {
+            .when('/settings/interview/:id/edit', {
                 templateUrl: "public/App/partials/settings/assessment/edit.html",
                 controller:"assessmentController"
             })

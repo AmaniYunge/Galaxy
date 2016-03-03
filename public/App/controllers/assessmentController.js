@@ -88,7 +88,8 @@
         }
 
         assessment.cancelAdd = function(){
-
+            console.log("abcd");
+            $location.path("/settings/interview");
         }
 
         $scope.loadAddQuestionForm = function(){
