@@ -8,9 +8,9 @@
         .module('microfinanceApp')
         .controller('applicantController', applicantController);
 
-    applicantController.$inject = ['$scope','$cookies','$timeout','$routeParams','$window','$filter','$location','AuthenticationService','ApplicantService','ApplicationService','LoanService','DTOptionsBuilder'];
+    applicantController.$inject = ['$scope','$cookies','$timeout','$routeParams','AssessmentService','$window','$filter','$location','AuthenticationService','ApplicantService','ApplicationService','LoanService','DTOptionsBuilder'];
 
-    function applicantController($scope,$cookies,$timeout,$routeParams,$window,$filter,$location,AuthenticationService,ApplicantService,ApplicationService,LoanService,DTOptionsBuilder) {
+    function applicantController($scope,$cookies,$timeout,$routeParams,AssessmentService,$window,$filter,$location,AuthenticationService,ApplicantService,ApplicationService,LoanService,DTOptionsBuilder) {
             var applicant = this;
             applicant.appllicants = {};
             $scope.hideFormToken = false;
@@ -27,8 +27,8 @@
                     $scope.loans  = data;
                 });
             }
-        applicant.loadLoans();
-         applicant.loadApplicants = function(){
+            applicant.loadLoans();
+            applicant.loadApplicants = function(){
                 ApplicantService.GetAll().then(function(data){
                     applicant.appllicants  = data;
                     $scope.applicants  = data;
@@ -198,12 +198,32 @@
 
         }
 
+        $scope.vailablequestions = null;
+        applicant.getQuestions  =   function(assessment){
+           var assessment =  JSON.parse(assessment);
+            $scope.questions = null;
+            AssessmentService.Questions(assessment.id).then(function(data){
+            $scope.questions = data.questions;
+            });
+
+        }
+
+        $scope.assessments = null;
+        applicant.loadAssessments = function(){
+            AssessmentService.GetAll().then(function(data){
+                $scope.assessments = data;
+            });
+        }
+
         applicant.info();
+        applicant.loadAssessments();
 
         /// chacke if assesment was requested
         if($location.path().indexOf("interview/add")>=0){
             applicant.loadApplicantAssessments($routeParams.id);
         }
+
+
 
     }
 

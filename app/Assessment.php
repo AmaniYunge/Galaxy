@@ -12,4 +12,10 @@ class Assessment extends Model
      * @var string
      */
     protected $table = 'assessments';
+
+    public function questions()
+    {
+        return $this->hasMany('App\Question','assessment_id','id');
+    }
+
 }

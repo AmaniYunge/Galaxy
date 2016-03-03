@@ -20,6 +20,7 @@
         service.Create = Create;
         service.Update = Update;
         service.Delete = Delete;
+        service.Questions = Questions;
         service.CheckLoanReturns = CheckLoanReturns;
         service.GetGrantedLoan = GetGrantedLoan;
         service.getLastReturn = getLastReturn;
@@ -49,6 +50,9 @@
 
         function Delete(id) {
             return $http.delete('public/index.php/assessments/' + id).then(handleSuccess, handleError('Error deleting user'));
+        }
+        function Questions(id) {
+            return $http.get('public/index.php/assessments/' + id+'/questions').then(handleSuccess, handleError('Error deleting user'));
         }
 
 

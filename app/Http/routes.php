@@ -33,6 +33,7 @@ Route::resource('questions', 'QuestionController');
 Route::resource('questions/{id}/interview_questions', 'QuestionController@loadByAssessment');
 Route::resource('answers', 'AnswersController');
 Route::resource('assessments', 'AssessmentController');
+Route::resource('assessments/{id}/questions', 'AssessmentController@question');
 Route::resource('finances', 'FinancialTransactionController');
 Route::resource('finances/{period}/{value}/get', 'FinancialTransactionController@recentTransaction');
 Route::resource('homeprint', 'HomeController@getPdf');

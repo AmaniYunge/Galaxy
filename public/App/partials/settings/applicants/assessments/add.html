@@ -1,10 +1,50 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<div ng-controller="applicantController as applicant">
 
-</body>
-</html>
+    <div class="col-md-12">
+        <div class="panel" >
+            <div class="panel-heading">
+                <div class="panel-title">Assesing {{}}</div>
+            </div>
+            <div class="panel-body" >
+                <div class="bs-example" >
+                    <div class="col-md-12">
+                        <label for="assessment">* Select Assessment</label>
+                        <select id="assessment" class="form-control" ng-model="picked" ng-change="applicant.getQuestions(picked)">
+                            <option ng-repeat="interview in assessments" value="{{interview}}">{{interview.assessment_name}} ({{interview.loan_id}})</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-12">
+                        <br/>
+                        <br/>
+                        <div ng-repeat="question in questions | orderBy:'question_number'">
+                            <div class="media-left">
+                                <a >
+                                    <h4>{{question.question_number}}&nbsp;.</h4>
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">{{question.description}}</h4>
+                                <div class="col-md-2">
+                                    <label for="{{question.id}}">Response</label>
+                                    <select class="form-control" id="{{question.id}}">
+                                        <option selected="selected" disabled="disabled"></option>
+                                        <option value="{{question.score_for_yes}}">YES</option>
+                                        <option value="{{question.score_for_no}}">NO</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <br/>
+                            <br/>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

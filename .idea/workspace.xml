@@ -25,15 +25,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="assessmentController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="assessmentController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/App/controllers/assessmentController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45454547" vertical-offset="1974" max-vertical-offset="3906">
-              <caret line="135" column="18" selection-start-line="135" selection-start-column="18" selection-end-line="135" selection-end-column="18" />
+            <state vertical-scroll-proportion="26.866667" vertical-offset="1508" max-vertical-offset="2916">
+              <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
               <folding>
                 <element signature="e#1198#1329#0" expanded="false" />
-                <element signature="e#1381#1597#0" expanded="false" />
+                <element signature="e#2781#3834#0" expanded="false" />
+                <element signature="e#3893#4946#0" expanded="false" />
+                <element signature="e#5009#5214#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.740741" vertical-offset="70" max-vertical-offset="684">
+              <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="43" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -41,8 +53,8 @@
       <file leaf-file-name="AssessmentService.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/App/services/AssessmentService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="696" max-vertical-offset="2574">
-              <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="598" max-vertical-offset="2646">
+              <caret line="72" column="33" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -51,8 +63,8 @@
       <file leaf-file-name="AssessmentController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AssessmentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.148149" vertical-offset="1292" max-vertical-offset="1836">
-              <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+            <state vertical-scroll-proportion="-15.740741" vertical-offset="727" max-vertical-offset="2070">
+              <caret line="68" column="60" selection-start-line="68" selection-start-column="60" selection-end-line="68" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -71,34 +83,47 @@
       <file leaf-file-name="applicantController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/App/controllers/applicantController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="1656">
-              <caret line="203" column="11" selection-start-line="203" selection-start-column="11" selection-end-line="203" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="854" max-vertical-offset="1728">
+              <caret line="208" column="9" selection-start-line="208" selection-start-column="9" selection-end-line="208" selection-end-column="9" />
               <folding>
-                <element signature="e#1851#2750#0" expanded="false" />
-                <element signature="e#2826#4012#0" expanded="false" />
-                <element signature="e#4080#5099#0" expanded="false" />
-                <element signature="e#5381#7047#0" expanded="false" />
-                <element signature="e#6120#7036#0" expanded="false" />
+                <element signature="e#1215#1411#0" expanded="false" />
+                <element signature="e#1760#2805#0" expanded="false" />
+                <element signature="e#1896#2795#0" expanded="false" />
+                <element signature="e#2871#4057#0" expanded="false" />
+                <element signature="e#4125#5144#0" expanded="false" />
+                <element signature="e#5210#5389#0" expanded="false" />
+                <element signature="e#5426#7092#0" expanded="false" />
+                <element signature="e#6165#7081#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/App/partials/settings/assessment/add.html">
+      <file leaf-file-name="Question.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Question.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.684211" vertical-offset="0" max-vertical-offset="918">
-              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+            <state vertical-scroll-proportion="-12.0" vertical-offset="0" max-vertical-offset="558">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/App/partials/settings/assessment/edit.html">
+      <file leaf-file-name="Assessment.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Assessment.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.0344827" vertical-offset="0" max-vertical-offset="900">
-              <caret line="5" column="84" selection-start-line="5" selection-start-column="68" selection-end-line="5" selection-end-column="84" />
+            <state vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="486">
+              <caret line="15" column="29" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/App/partials/settings/applicants/assessments/add.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7733813" vertical-offset="218" max-vertical-offset="990">
+              <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -107,31 +132,12 @@
       <file leaf-file-name="more.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/App/partials/settings/assessment/more.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.6666667" vertical-offset="522" max-vertical-offset="1530">
-              <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/App/partials/settings/assessment/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.0" vertical-offset="378" max-vertical-offset="4194">
-              <caret line="39" column="12" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
+            <state vertical-scroll-proportion="-2.7037036" vertical-offset="161" max-vertical-offset="1260">
+              <caret line="13" column="117" selection-start-line="13" selection-start-column="89" selection-end-line="13" selection-end-column="117" />
               <folding>
-                <element signature="n#style#0;n#a#2;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="tag#div#0;tag#div#0;tag#div#0;tag#div#1;tag#div#0;tag#div#0;tag#div#0" expanded="false" />
+                <element signature="tag#div#1;tag#div#0;tag#div#0;tag#div#1;tag#div#0;tag#div#0;tag#div#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/App/partials/settings/applicants/assessments/edit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="270">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -174,32 +180,32 @@
         <option value="$PROJECT_DIR$/app/Answer.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_02_22_103245_add_assessments_table.php" />
         <option value="$PROJECT_DIR$/config/database.php" />
-        <option value="$PROJECT_DIR$/app/Assessment.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_02_22_103354_create_applicantresponses_table.php" />
         <option value="$PROJECT_DIR$/public/App/partials/settings/applicants/index.html" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApplicantController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_02_22_103527_create_answers_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_02_22_103245_create_assessments_table.php" />
         <option value="$PROJECT_DIR$/public/App/partials/settings/assessment/add.html" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_02_22_112849_create_questions_table.php" />
         <option value="$PROJECT_DIR$/public/App/services/QuestionService.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/public/App/partials/settings/questions/add.html" />
         <option value="$PROJECT_DIR$/public/App/partials/settings/assessment/more.html" />
-        <option value="$PROJECT_DIR$/app/Question.php" />
         <option value="$PROJECT_DIR$/public/App/partials/settings/questions/edit.html" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" />
-        <option value="$PROJECT_DIR$/public/App/partials/settings/applicants/assessments/add.html" />
         <option value="$PROJECT_DIR$/public/App/partials/settings/applicants/assessments/index.html" />
-        <option value="$PROJECT_DIR$/public/App/controllers/applicantController.js" />
         <option value="$PROJECT_DIR$/public/App/partials/settings/applicants/assessments/edit.html" />
         <option value="$PROJECT_DIR$/public/App/app.js" />
         <option value="$PROJECT_DIR$/public/App/partials/settings/assessment/edit.html" />
-        <option value="$PROJECT_DIR$/public/App/services/AssessmentService.js" />
         <option value="$PROJECT_DIR$/public/App/partials/settings/assessment/index.html" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AssessmentController.php" />
         <option value="$PROJECT_DIR$/public/App/controllers/assessmentController.js" />
+        <option value="$PROJECT_DIR$/app/Question.php" />
+        <option value="$PROJECT_DIR$/app/Assessment.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AssessmentController.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/public/App/services/AssessmentService.js" />
+        <option value="$PROJECT_DIR$/public/App/controllers/applicantController.js" />
+        <option value="$PROJECT_DIR$/public/App/partials/settings/applicants/assessments/add.html" />
       </list>
     </option>
   </component>
@@ -771,13 +777,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Assessment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.6666665" vertical-offset="108" max-vertical-offset="378">
-          <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2015_11_13_090235_create_loan_returns_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.8521127" vertical-offset="526" max-vertical-offset="810">
@@ -915,24 +914,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="151" max-vertical-offset="666">
-          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AssetController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="2088">
           <caret line="45" column="38" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Question.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="558">
-          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -1056,14 +1041,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/App/partials/settings/applicants/assessments/add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3333334" vertical-offset="0" max-vertical-offset="270">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/App/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1846" max-vertical-offset="3204">
@@ -1072,32 +1049,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/App/partials/settings/assessment/more.html">
+    <entry file="file://$PROJECT_DIR$/public/App/partials/settings/assessment/edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6666667" vertical-offset="522" max-vertical-offset="1530">
-          <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.1910828" vertical-offset="0" max-vertical-offset="900">
+          <caret line="5" column="84" selection-start-line="5" selection-start-column="68" selection-end-line="5" selection-end-column="84" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/App/controllers/applicantController.js">
+    <entry file="file://$PROJECT_DIR$/public/App/partials/settings/assessment/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="990" max-vertical-offset="1656">
-          <caret line="203" column="11" selection-start-line="203" selection-start-column="11" selection-end-line="203" selection-end-column="27" />
-          <folding>
-            <element signature="e#1851#2750#0" expanded="false" />
-            <element signature="e#2826#4012#0" expanded="false" />
-            <element signature="e#4080#5099#0" expanded="false" />
-            <element signature="e#5381#7047#0" expanded="false" />
-            <element signature="e#6120#7036#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/App/partials/settings/assessment/add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.684211" vertical-offset="0" max-vertical-offset="918">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5827338" vertical-offset="378" max-vertical-offset="4194">
+          <caret line="39" column="12" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -1110,11 +1073,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/App/partials/settings/assessment/edit.html">
+    <entry file="file://$PROJECT_DIR$/app/Question.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0344827" vertical-offset="0" max-vertical-offset="900">
-          <caret line="5" column="84" selection-start-line="5" selection-start-column="68" selection-end-line="5" selection-end-column="84" />
+        <state vertical-scroll-proportion="-12.0" vertical-offset="0" max-vertical-offset="558">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Assessment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="486">
+          <caret line="15" column="29" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AssessmentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.740741" vertical-offset="727" max-vertical-offset="2070">
+          <caret line="68" column="60" selection-start-line="68" selection-start-column="60" selection-end-line="68" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/App/partials/settings/assessment/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.25926" vertical-offset="119" max-vertical-offset="918">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.740741" vertical-offset="70" max-vertical-offset="684">
+          <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/App/services/AssessmentService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="598" max-vertical-offset="2646">
+          <caret line="72" column="33" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/App/controllers/assessmentController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="26.866667" vertical-offset="1508" max-vertical-offset="2916">
+          <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+          <folding>
+            <element signature="e#1198#1329#0" expanded="false" />
+            <element signature="e#2781#3834#0" expanded="false" />
+            <element signature="e#3893#4946#0" expanded="false" />
+            <element signature="e#5009#5214#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/App/controllers/applicantController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="854" max-vertical-offset="1728">
+          <caret line="208" column="9" selection-start-line="208" selection-start-column="9" selection-end-line="208" selection-end-column="9" />
+          <folding>
+            <element signature="e#1215#1411#0" expanded="false" />
+            <element signature="e#1760#2805#0" expanded="false" />
+            <element signature="e#1896#2795#0" expanded="false" />
+            <element signature="e#2871#4057#0" expanded="false" />
+            <element signature="e#4125#5144#0" expanded="false" />
+            <element signature="e#5210#5389#0" expanded="false" />
+            <element signature="e#5426#7092#0" expanded="false" />
+            <element signature="e#6165#7081#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1126,40 +1159,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/App/partials/settings/assessment/index.html">
+    <entry file="file://$PROJECT_DIR$/public/App/partials/settings/assessment/more.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.0" vertical-offset="378" max-vertical-offset="4194">
-          <caret line="39" column="12" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
+        <state vertical-scroll-proportion="-2.7037036" vertical-offset="161" max-vertical-offset="1260">
+          <caret line="13" column="117" selection-start-line="13" selection-start-column="89" selection-end-line="13" selection-end-column="117" />
           <folding>
-            <element signature="n#style#0;n#a#2;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="tag#div#0;tag#div#0;tag#div#0;tag#div#1;tag#div#0;tag#div#0;tag#div#0" expanded="false" />
+            <element signature="tag#div#1;tag#div#0;tag#div#0;tag#div#1;tag#div#0;tag#div#0;tag#div#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/App/services/AssessmentService.js">
+    <entry file="file://$PROJECT_DIR$/public/App/partials/settings/applicants/assessments/add.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="696" max-vertical-offset="2574">
-          <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.7733813" vertical-offset="218" max-vertical-offset="990">
+          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AssessmentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.148149" vertical-offset="1292" max-vertical-offset="1836">
-          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/App/controllers/assessmentController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45454547" vertical-offset="1974" max-vertical-offset="3906">
-          <caret line="135" column="18" selection-start-line="135" selection-start-column="18" selection-end-line="135" selection-end-column="18" />
-          <folding>
-            <element signature="e#1198#1329#0" expanded="false" />
-            <element signature="e#1381#1597#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
