@@ -15,6 +15,7 @@
 
 
         var liabilityC = this;
+        liabilityC.formUrl = "public/App/partials/settings/liabilities/add.html";
         /**
          * Applicant datatables
          * */
@@ -53,8 +54,7 @@
                         liabilityC.loadLiabilities();
                         $timeout(function () {
                             $scope.laibilityOb = null;
-                            $scope.success = false;
-                            $scope.failure = false;
+                            liabilityC.formUrl = "public/App/partials/settings/liabilities/add.html";
                         }, 1000);
                     }
                 },function(respense){
@@ -75,15 +75,14 @@
             $scope.edit_liabilities = true;
             $scope.add_liabilities = false;
             $scope.liability_to_edit = $filter('filterById')($scope.liabilities,id);
-            console.log(id);
+            liabilityC.formUrl = "public/App/partials/settings/liabilities/edit.html";
         }
         liabilityC.updateLiabilities = function(Liabilities){
 
             LiabilityService.Update(Liabilities).then(function(response){
                 if(response=="success"){
                     liabilityC.loadLiabilities();
-                    $scope.edit_liabilities = false;
-                    $scope.add_liabilities = true
+                    liabilityC.formUrl = "public/App/partials/settings/liabilities/add.html";
                 }
             },function(){
 
@@ -93,8 +92,7 @@
             LiabilityService.Delete(id).then(function(response){
                 if(response=="success"){
                     liabilityC.loadLiabilities();
-                    $scope.edit_liabilities = false;
-                    $scope.add_liabilities = true
+                    liabilityC.formUrl = "public/App/partials/settings/liabilities/add.html";
                 }
             },function(){
 

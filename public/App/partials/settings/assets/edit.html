@@ -1,0 +1,50 @@
+<div class="panel" >
+    <div class="panel-heading">
+        <div class="panel-title"> <i class="fa fa-pencil"></i> Edit Assets </div>
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal" role="form" ng-submit="assetC.updateAssets(asset_to_edit)">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="asset_edit">Asset Name</label>
+                    <input id="asset_edit" name="asset_name" type="text"   ng-model="asset_to_edit.name" class="form-control" placeholder="Asset Name" required="">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="asset_type_edit">Asset Type</label>
+                    <select id="asset_type_edit" name="assets_name" type="text"   ng-model="asset_to_edit.type" class="form-control" placeholder="Asset Type" required="">
+                        <option>Fixed Asset</option>
+                        <option>Current Asset</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="value_e">Value</label>
+                    <input id="value_e" name="value" type="text"   ng-model="asset_to_edit.value" class="form-control" placeholder="Value" required="">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="asset_edit">Date Bought</label>
+                    <datepicker date-format="yyyy-MM-dd">
+                        <input id="date_bought"  name="date_bought" type="text"   ng-model="asset_to_edit.date" class="form-control" placeholder="Date Bought" required="">
+                    </datepicker>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-sm-12 form-group text-center">
+                    <input class="btn btn-primary"  type="submit" value="Update">
+                    <input class="btn btn-warning"  type="reset" value="Reset">
+                    <a class="btn btn-danger"  ng-click="assetC.cancelUpdate()"  >Cancel</a>
+                </div>
+
+            </div>
+        </form>
+        <div class="col-md-12">
+            <div class="alert alert-success " ng-if="success">Asset <b> {{current.name}}</b> Updated Successfully.</div>
+            <div class="alert alert-warning" ng-if="failure">Asset <b> {{current.name}}</b> Fail Updating.</div>
+        </div>
+    </div>
+</div>

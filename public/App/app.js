@@ -90,6 +90,23 @@
                 templateUrl: "public/App/partials/settings/loans/applications.html",
                 controller:"loanController"
             })
+            .when('/settings/interview', {
+                templateUrl: "public/App/partials/settings/assessment/index.html",
+                controller:"assessmentController"
+            })
+            .when('/settings/interview/more/:id', {
+                templateUrl: "public/App/partials/settings/assessment/more.html"
+                //,
+                //controller:"assessmentController"
+            })
+            .when('/settings/interview/add', {
+                templateUrl: "public/App/partials/settings/assessment/add.html",
+                controller:"assessmentController"
+            })
+            .when('/settings/interview/edit', {
+                templateUrl: "public/App/partials/settings/assessment/edit.html",
+                controller:"assessmentController"
+            })
             .when('/settings/expenses', {
                 templateUrl: "public/App/partials/settings/expenses/index.html",
                 controller:"expensesController"
@@ -108,10 +125,24 @@
             .when('/settings/applications', {
                 templateUrl: "public/App/partials/settings/applications/index.html",
                 controller:"applicationController"
-            }).when('/settings/applications/:id/more', {
+            })
+            .when('/settings/applications/:id/more', {
                 templateUrl: "public/App/partials/settings/applications/more.html",
                 controller:"applicationController"
-            }).when('/settings/applications/:id/:applicant_id/grant', {
+            })
+            .when('/settings/applications/add', {
+                templateUrl: "public/App/partials/settings/applications/add.html",
+                controller:"applicationController"
+            })
+            .when('/settings/applications/edit', {
+                templateUrl: "public/App/partials/settings/applications/more.html",
+                controller:"applicationController"
+            })
+            .when('/settings/applications/delete', {
+                templateUrl: "public/App/partials/settings/applications/more.html",
+                controller:"applicationController"
+            })
+            .when('/settings/applications/:id/:applicant_id/grant', {
                 templateUrl: "public/App/partials/settings/applications/grant.html",
                 controller:"applicationController"
             })

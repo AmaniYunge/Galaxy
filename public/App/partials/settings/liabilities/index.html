@@ -12,7 +12,8 @@
                     <div id="tab1" class="tab-pane active">
 
 
-                        <table class="table table-condensed" datatable="ng" dt-options="dtOptions">
+                        <!--<table class="table table-condensed" datatable="ng" dt-options="dtOptions">-->
+                        <table class="table table-condensed" >
                             <thead>
                             <tr>
                                 <th>#</th>
@@ -42,60 +43,7 @@
         </div>
     </div>
     <div class="col-md-4">
-        <div class="panel" ng-if="add_liabilities">
-            <div class="panel-heading">
-                <div class="panel-title"> <i class="fa fa-plus"></i> Add Liabilities </div>
-            </div>
-            <div class="panel-body">
-                <form class="form-horizontal" role="form" ng-submit="liabilityC.saveLiabilities(liabilityOb)">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="liability">Liability Name</label>
-                            <input id="liability" name="liabilities_name" type="text"   ng-model="liabilityOb.name" class="form-control" placeholder="Liability Name" required="">
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="col-sm-12 form-group text-center">
-                            <input class="btn btn-primary"  type="submit" value="Register">
-                            <input class="btn btn-warning"  type="reset" value="Reset">
-                            <input class="btn btn-danger" ng-click="liabilityC.addLiab()"  type="reset" value="Cancel">
-                        </div>
 
-                    </div>
-                </form>
-                <div class="col-md-12">
-                    <div class="alert alert-success " ng-if="success">Liability <b> {{current.name}} </b> Registered Successfully.</div>
-                    <div class="alert alert-warning" ng-if="failure">Liability <b> {{current.name}} </b> Fail Registration.</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="panel" ng-if="edit_liabilities">
-            <div class="panel-heading">
-                <div class="panel-title"> <i class="fa fa-pencil"></i> Edit Liabilities </div>
-            </div>
-            <div class="panel-body">
-                <form class="form-horizontal" role="form" ng-submit="liabilityC.updateLiabilities(liability_to_edit)">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="liability_edit">Liabilities Name</label>
-                            <input id="liability_edit" name="liability_name" type="text"   ng-model="liability_to_edit.name" class="form-control" placeholder="Liability Name" required="">
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="col-sm-12 form-group text-center">
-                            <input class="btn btn-primary"  type="submit" value="Update">
-                            <input class="btn btn-warning"  type="reset" value="Reset">
-                            <input class="btn btn-danger" ng-click="liabilityC.addLiab()"  type="reset" value="Cancel">
-                        </div>
-
-                    </div>
-                </form>
-                <div class="col-md-12">
-                    <div class="alert alert-success " ng-if="success">Liability <b> {{current.name}}</b> Updated Successfully.</div>
-                    <div class="alert alert-warning" ng-if="failure">Liability <b> {{current.name}}</b> Fail Updating.</div>
-                </div>
-            </div>
-        </div>
+        <ng-include src="liabilityC.formUrl"></ng-include>
     </div>
 </div>

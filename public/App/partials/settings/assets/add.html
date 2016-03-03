@@ -1,0 +1,49 @@
+<div class="panel"  >
+    <div class="panel-heading">
+        <div class="panel-title"> <i class="fa fa-plus"></i> Add Assets </div>
+    </div>
+    <div class="panel-body" >
+        <form class="form-horizontal" role="form" ng-submit="assetC.saveAssets(assetOb)">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="asset">Asset Name</label>
+                    <input id="asset" name="assets_name" type="text"   ng-model="assetOb.name" class="form-control" placeholder="Asset Name" required="">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="asset_type">Asset Type</label>
+                    <select id="asset_type" name="assets_name" type="text"   ng-model="assetOb.type" class="form-control" placeholder="Asset Type" required="">
+                        <option>Fixed Asset</option>
+                        <option>Current Asset</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="value">Value</label>
+                    <input id="value" name="value" type="text"   ng-model="assetOb.value" class="form-control" placeholder="Value" required="">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input id="date" datepicker name="date" type="text"  ng-model="assetOb.date" class="form-control" placeholder="Date" required="">
+
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-sm-12 form-group text-center">
+                    <input class="btn btn-primary"  type="submit" value="Register">
+                    <input class="btn btn-warning"  type="reset" value="Reset">
+                    <a class="btn btn-danger"  ng-click="assetC.cancelAdd()"  >Cancel</a>
+                </div>
+
+            </div>
+        </form>
+        <div class="col-md-12">
+            <div class="alert alert-success " ng-if="success">Asset <b> {{current.name}} </b> Registered Successfully.</div>
+            <div class="alert alert-warning" ng-if="failure">Asset <b> {{current.name}} </b> Fail Registration.</div>
+        </div>
+    </div>
+</div>

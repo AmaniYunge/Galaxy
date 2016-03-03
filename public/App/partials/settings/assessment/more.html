@@ -1,0 +1,80 @@
+<div ng-controller="assessmentController as assessment">
+
+    <div class="{{moreassessment_panelclass}}">
+        <div class="panel" >
+            <div class="panel-heading">
+                <div class="panel-title">  {{ currentAssessment.name }}   {{ currentAssessment.assessment_name }} <i class="fa fa-question"></i> </div>
+                <div class="panel-field pull-right">
+                    <a ng-click="loadAddQuestionForm()" class="btn btn-sm btn-primary" >Add Question</a>
+                </div>
+            </div>
+            <!--ng-href="#/settings/interview/{{currentAssessment}}/add_question"-->
+            <div class="panel-body" >
+                <div class="bs-example" >
+                    <div class="media" ng-repeat="question in currentAssessment.questions | orderBy:'question_number'">
+                        <div class="media-left">
+                            <a >
+                                <h4>{{question.question_number}}&nbsp;.</h4>
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">{{question.description}}&nbsp;&nbsp;<a ng-click="editQuestion(question)" class="alert-warning" style="cursor: pointer;">edit</a>&nbsp;<a ng-click="deleteQuestion(question)" style="cursor: pointer;" class="alert-danger">delete</a></h4>
+
+                            <div class="col-md-12">
+                               YES :  {{question.score_for_no}}
+                            </div>
+
+                            <div class="col-md-12">
+                               NO :  {{question.score_for_no}}
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!--<form class="form-horizontal" role="form" ng-submit="assess.saveAssessment(assessment)">-->
+                <!--<div class="col-md-12">-->
+                <!--<div class="form-group">-->
+                <!--<label for="assessment_name">Assessment Name</label>-->
+                <!--<select class="form-control" id="assessment_name" ng-model="assessment.assessment_name" required="">-->
+                <!--<option selected="=selected" disabled="disabled">-- Select Assessment --</option>-->
+                <!--<option name="Qualitative Assessment">Qualitative Assessment</option>-->
+                <!--<option name="Quantitative Assessment">Quantitative Assessment</option>-->
+                <!--</select>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-md-12">-->
+                <!--<div class="form-group">-->
+                <!--<label for="loan_type">Loan Type</label>-->
+                <!--<select id="loan_type" name="loan_id" type="text"   ng-model="assessment.loan_id" class="form-control" required="">-->
+                <!--<option selected="selected" disabled="disabled" >-- Select Loan Type --</option>-->
+                <!--<option ng-repeat="loan in loans" value="{{loan.id}}">{{loan.name}} ({{loan.code}})</option>-->
+                <!--</select>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-md-12">-->
+                <!--<div class="form-group">-->
+                <!--<label for="minimum_score">Minimum Score</label>-->
+                <!--<input id="minimum_score" name="minimum_score" type="text"   ng-model="assessment.minimum_score" class="form-control" required="" />-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-md-12">-->
+                <!--<div class="col-sm-12 form-group text-center">-->
+                <!--<input class="btn btn-primary"  type="submit" value="Register">-->
+                <!--<input class="btn btn-warning"  type="reset" value="Reset">-->
+                <!--<a class="btn btn-danger"  ng-click="assess.cancelAdd()"  >Cancel</a>-->
+                <!--</div>-->
+
+                <!--</div>-->
+                <!--</form>-->
+                <!--<div class="col-md-12">-->
+                <!--<div class="alert alert-success " ng-if="success">Assessment <b> {{current.assessment_name}} </b> Registered Successfully.</div>-->
+                <!--<div class="alert alert-warning" ng-if="failure">Assessment <b> {{current.assessment_name}} </b> Fail Registration.</div>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5" ng-if="showleft_form">
+                <ng-include src="leftFormUrl"></ng-include>
+    </div>
+</div>

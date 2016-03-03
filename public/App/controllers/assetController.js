@@ -15,6 +15,8 @@
 
 
         var assetC = this;
+
+            assetC.formUrl = "public/App/partials/settings/assets/add.html";
         /**
          * Applicant datatables
          * */
@@ -33,8 +35,6 @@
         assetC.loadAssets();
 
         assetC.saveAssets = function(Assets){
-            console.log(Assets);
-
 
             $scope.success = false;
             $scope.failure = false;
@@ -67,18 +67,15 @@
         $scope.edit_assets = false;
         $scope.add_assets = true;
         assetC.editAssets = function(id){
-            $scope.edit_assets = true;
-            $scope.add_assets = false;
             $scope.asset_to_edit = $filter('filterById')($scope.assets,id);
-            console.log(id);
+            assetC.formUrl = "public/App/partials/settings/assets/edit.html";
         }
         assetC.updateAssets = function(Assets){
 
             AssetService.Update(Assets).then(function(response){
                 if(response=="success"){
                     assetC.loadAssets();
-                    $scope.edit_assets = false;
-                    $scope.add_assets = true
+                    assetC.formUrl = "public/App/partials/settings/assets/add.html";
                 }
             },function(){
 
@@ -88,8 +85,7 @@
             AssetService.Delete(id).then(function(response){
                 if(response=="success"){
                     assetC.loadAssets();
-                    $scope.edit_assets = false;
-                    $scope.add_assets = true
+                    assetC.formUrl = "public/App/partials/settings/assets/add.html";
                 }
             },function(){
 
@@ -97,6 +93,18 @@
 
         }
 
+
+        assetC.cancelUpdate = function(){
+            assetC.formUrl = "public/App/partials/settings/assets/add.html";
+        }
+
+        assetC.cancelAdd = function(){
+            console.log("CANCEL UPDATE EXECUTED");
+            assetC.formUrl = "public/App/partials/settings/assets/add.html";
+            //$window.location.reload();
+        }
+
+        console.log(assetC);
     }
 
 })();

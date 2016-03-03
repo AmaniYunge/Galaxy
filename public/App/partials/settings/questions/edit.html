@@ -1,0 +1,47 @@
+<div class="panel" >
+    <div class="panel-heading">
+        <div class="panel-title"> Edit Question Form</div>
+    </div>
+
+    <div class="panel-body" >
+
+
+    <form ng-submit="updateQuestion(editQuestion)">
+    <div class="form-group">
+        <label for="description">Question Descriptions</label>
+        <textarea id="description" ng-model="editQuestion.description" class="form-control" required=""></textarea>
+    </div>
+    <div class="form-group">
+        <label for="score_for_yes">Score For YES</label>
+        <input type="text" class="form-control" ng-model="editQuestion.score_for_yes" id="score_for_yes" placeholder="Score for Yes" required="">
+        <input type="hidden" class="form-control" ng-model="editQuestion.assessment_id" id="assessment_id" >
+    </div>
+
+    <div class="form-group">
+        <label for="score_for_no">Score For NO</label>
+        <input type="text" class="form-control" ng-model="editQuestion.score_for_no" id="score_for_no" placeholder="Score for No" required="">
+    </div>
+
+    <div class="form-group">
+        <label for="question_number">Question Number</label>
+        <input type="text" class="form-control" ng-model="editQuestion.question_number" id="question_number" placeholder="Question Number" required="">
+    </div>
+
+    <div class="col-md-12">
+        <div >
+            <div class="col-sm-12 form-group text-center">
+                <input class="btn btn-primary"  type="submit" value="Register">
+                <input class="btn btn-warning"  type="reset" value="Reset">
+                <a class="btn btn-danger"  ng-click="cancelAddQuestionForm()"  >Cancel</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="alert alert-success " ng-if="success">Question <b> {{current.name}}</b> Addedd Successfully.</div>
+        <div class="alert alert-warning" ng-if="failure">Question <b> {{current.name}} </b> Fail to add.</div>
+    </div>
+</form>
+
+</div>
+</div>

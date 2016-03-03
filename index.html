@@ -101,12 +101,15 @@
     <script src="public/App/controllers/incomeStatementController.js"></script>
     <script src="public/App/controllers/debtorsController.js"></script>
     <script src="public/App/services/AuthenticationService.js"></script>
+    <script src="public/App/controllers/assessmentController.js"></script>
     <script src="public/App/services/UserService.js"></script>
     <script src="public/App/services/CashAccountService.js"></script>
+    <script src="public/App/services/QuestionService.js"></script>
     <script src="public/App/services/ApplicationDetailService.js"></script>
     <script src="public/App/services/CompanyService.js"></script>
     <script src="public/App/services/companyProfitService.js"></script>
     <script src="public/App/services/ApplicantService.js"></script>
+    <script src="public/App/services/AssessmentService.js"></script>
     <script src="public/App/services/ApplicationService.js"></script>
     <script src="public/App/services/LoanService.js"></script>
     <script src="public/App/services/ExpensesService.js"></script>
@@ -121,7 +124,18 @@
     <script src="public/App/filters/byIdFilter.js"></script>
 
 </head>
-
+<style>
+    .bs-example {
+        margin-right: 0!important;
+        margin-left: 0!important;
+        background-color: #fff!important;
+        border-color: #ddd!important;
+        border-width: 1px!important;
+        border-radius: 4px 4px 0 0!important;
+        -webkit-box-shadow: none!important;
+        box-shadow: none!important;
+    }
+</style>
 <body class="dashboard" ng-controller="mainController">
 <div ng-controller="homeController as main">
 <!-- Start: Header -->
@@ -200,6 +214,7 @@
                     <li><a ng-href="#/settings/start_capital"><span class="fa fa-bank"></span>&nbsp;&nbsp;Start Capital</a></li>
                     <li><a ng-href="#/settings/loans"><span class="fa fa-cc-visa"></span>&nbsp;&nbsp;Loans</a></li>
                     <li><a  ng-href="#/applicants"><span class="fa fa-users "></span>&nbsp;&nbsp;Applicants</a></li>
+                    <li><a  ng-href="#/settings/interview"><span class="fa fa-question "></span>&nbsp;&nbsp;Interview</a></li>
                     <li><a  ng-href="#/settings/expenses"><span class="fa fa-scissors"></span>&nbsp;&nbsp;Expenses</a></li>
                     <li><a  ng-href="#/settings/liabilities"><span class="fa fa-bitbucket"></span>&nbsp;&nbsp;Liabilites</a></li>
                     <li><a ng-href="#/settings/assets"><span class="fa fa-tv"></span>&nbsp;&nbsp;Assets</a></li>

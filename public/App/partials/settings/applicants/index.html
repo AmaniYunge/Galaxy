@@ -40,7 +40,8 @@
                             <td>{{applicnt.phone}}</td>
                             <td>{{applicnt.residence}}</td>
                             <td  class=" ">
-                                <a href="#/applicant/{{applicnt.id}}" title="View Applicants Information" class="edituser"><i class="fa fa-list text-success"></i> info</a>&nbsp;&nbsp;&nbsp;
+                                <a href="#/applicant/{{applicnt.id}}" title="View Applicants Information" class="info"><i class="fa fa-list text-success"></i> info</a>&nbsp;&nbsp;&nbsp;
+                                <a href="#/applicant/{{applicnt.id}}/interview/" title="Applicant Interview" class="interview"><i class="fa fa-question text-success"></i> interview</a>&nbsp;&nbsp;&nbsp;
                                 <a href="#/applicant/{{applicnt.id}}/application" title="Add Loan Application" class="loanapp"><i class="fa fa-briefcase text-warning"></i> application</a>&nbsp;&nbsp;&nbsp;
                                 <a href="#/applicant/{{applicnt.id}}/edit" title="edit Staff" class="edituser"><i class="fa fa-pencil text-info"></i> edit</a>&nbsp;&nbsp;&nbsp;
                                 <a style="cursor: pointer;" ng-click="applicant.deleteLoanApplicant(applicnt.id)" title="delete Applicant" class="deleteapp"><i class="fa fa-trash-o text-danger"></i> delete</a>

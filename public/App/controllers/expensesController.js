@@ -15,6 +15,7 @@
 
 
         var expensesC = this;
+        expensesC.formUrl = "public/App/partials/settings/expenses/add.html";
         /**
          * Applicant datatables
          * */
@@ -53,6 +54,8 @@
                             $scope.success = false;
                             $scope.failure = false;
                         }, 1000);
+
+                        expensesC.formUrl = "public/App/partials/settings/expenses/add.html";
                     }
                 },function(respense){
                     $scope.failure = true;
@@ -72,15 +75,14 @@
             $scope.edit_expenses = true;
             $scope.add_expenses = false;
             $scope.expense_to_edit = $filter('filterById')($scope.expenses,id);
-            console.log(id);
+            expensesC.formUrl = "public/App/partials/settings/liabilities/edit.html";
         }
         expensesC.updateExpenses = function(expenses){
 
             ExpensesService.Update(expenses).then(function(response){
                 if(response=="success"){
                     expensesC.loadExpenses();
-                    $scope.edit_expenses = false;
-                    $scope.add_expenses = true
+                    expensesC.formUrl = "public/App/partials/settings/expenses/add.html";
                 }
             },function(){
 
@@ -90,8 +92,7 @@
             ExpensesService.Delete(id).then(function(response){
                 if(response=="success"){
                     expensesC.loadExpenses();
-                    $scope.edit_expenses = false;
-                    $scope.add_expenses = true
+                    expensesC.formUrl = "public/App/partials/settings/expenses/add.html";
                 }
             },function(){
 

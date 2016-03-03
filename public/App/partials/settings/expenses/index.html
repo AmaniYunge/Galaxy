@@ -12,7 +12,8 @@
                     <div id="tab1" class="tab-pane active">
 
 
-                        <table class="table table-condensed" datatable="ng" dt-options="dtOptions">
+                        <!--<table class="table table-condensed" datatable="ng" dt-options="dtOptions">-->
+                        <table class="table table-condensed" >
                             <thead>
                             <tr>
                                 <th>#</th>
@@ -42,58 +43,6 @@
         </div>
     </div>
     <div class="col-md-4">
-        <div class="panel" ng-if="add_expenses">
-            <div class="panel-heading">
-                <div class="panel-title"> <i class="fa fa-plus"></i> Add Expenses </div>
-            </div>
-            <div class="panel-body">
-                <form class="form-horizontal" role="form" ng-submit="expenseC.saveExpenses(expenseOb)">
-                    <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="expenses">Expenses Name</label>
-                                <input id="expenses" name="expenses_name" type="text"   ng-model="expenseOb.name" class="form-control" placeholder="Expenses Name" required="">
-                            </div>
-                    </div>
-                    <div class="col-md-12">
-                            <div class="col-sm-12 form-group text-center">
-                                <input class="btn btn-primary"  type="submit" value="Register">
-                                <input class="btn btn-warning"  type="reset" value="Reset">
-                            </div>
-
-                    </div>
-                </form>
-                <div class="col-md-12">
-                    <div class="alert alert-success " ng-if="success">Expenses <b> {{current.name}} </b> Registered Successfully.</div>
-                    <div class="alert alert-warning" ng-if="failure">Applicant <b> {{current.name}} </b> Fail Registration.</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="panel" ng-if="edit_expenses">
-            <div class="panel-heading">
-                <div class="panel-title"> <i class="fa fa-pencil"></i> Edit Expenses </div>
-            </div>
-            <div class="panel-body">
-                <form class="form-horizontal" role="form" ng-submit="expenseC.updateExpenses(expense_to_edit)">
-                    <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="expenses_edit">Expenses Name</label>
-                                <input id="expenses_edit" name="expenses_name" type="text"   ng-model="expense_to_edit.name" class="form-control" placeholder="Expenses Name" required="">
-                            </div>
-                    </div>
-                    <div class="col-md-12">
-                            <div class="col-sm-12 form-group text-center">
-                                <input class="btn btn-primary"  type="submit" value="Update">
-                                <input class="btn btn-warning"  type="reset" value="Reset">
-                            </div>
-
-                    </div>
-                </form>
-                <div class="col-md-12">
-                    <div class="alert alert-success " ng-if="success">Applicant <b> {{current.name}}</b> Updated Successfully.</div>
-                    <div class="alert alert-warning" ng-if="failure">Applicant <b> {{current.name}}</b> Fail Updating.</div>
-                </div>
-            </div>
-        </div>
+        <ng-include src="expenseC.formUrl"></ng-include>
     </div>
 </div>
