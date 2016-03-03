@@ -47,6 +47,10 @@
                 templateUrl: "public/App/partials/settings/applicants/assessments/index.html",
                 controller:"applicantController"
             })
+            .when('/applicant/:id/interview/add', {
+                templateUrl: "public/App/partials/settings/applicants/assessments/add.html",
+                controller:"applicantController"
+            })
             .when('/applicant/:id/edit', {
                 templateUrl: "public/App/partials/settings/applicants/edit.html",
                 controller:"applicantController"

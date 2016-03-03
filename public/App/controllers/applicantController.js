@@ -193,7 +193,18 @@
             }
 
         }
+
+        applicant.loadApplicantAssessments = function(applicantId){
+
+        }
+
         applicant.info();
+
+        /// chacke if assesment was requested
+        if($location.path().indexOf("interview/add")>=0){
+            applicant.loadApplicantAssessments($routeParams.id);
+        }
+
     }
 
 })();
