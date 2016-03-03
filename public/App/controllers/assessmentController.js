@@ -56,12 +56,13 @@
             }
 
             if($location.path().indexOf('/edit')>=0){
+                $scope.editedAssessment = {};
                 var assessmentId =$routeParams.id;
                 AssessmentService.GetById(assessmentId).then(function(data){
-                    angular.extend($scope.currentAssessment,data);
-                    $scope.associatedLoan = assessment.getLoanById($scope.currentAssessment.loan_id);
+                    angular.extend($scope.editedAssessment,data);
+                    $scope.associatedLoan = assessment.getLoanById($scope.editedAssessment.loan_id);
                     //$scope.getQuestionsFromAssessment(assessmentId);
-                    //angular.extend($scope.currentAssessment,assessment.getLoanById(data.loan_id));
+                    angular.extend($scope.editedAssessment,$scope.associatedLoan);
 
                 });
 
@@ -97,6 +98,44 @@
                     }, 1000);
                 });
             }
+        }
+        assessment.updateAssessment = function(assessment){
+
+            $scope.assessment = null;
+            $scope.success = false;
+            $scope.failure = false;
+            if(assessment){
+                $scope.current = assessment;
+                AssessmentService.Update(assessment).then(function(respense){
+                    if(respense=="success"){
+                        $scope.assessment = null;
+                        $scope.success = true;
+                        $scope.failure = false;
+
+                        $timeout(function () {
+                            $scope.assessment = null;
+                            $scope.success = false;
+                            $scope.failure = false;
+                        }, 1000);
+                    }
+                },function(respense){
+                    $scope.failure = true;
+                    $scope.success = false;
+                    $timeout(function () {
+                        $scope.success = false;
+                        $scope.failure = false;
+                    }, 1000);
+                });
+            }
+        }
+
+        assessment.deleteAssessment = function(assessment_id){
+            AssessmentService.Delete(assessment_id).then(function(respense){
+                assessment.getAssessments();
+                if(respense=="success"){
+
+                }
+        });
         }
 
         assessment.cancelAdd = function(){

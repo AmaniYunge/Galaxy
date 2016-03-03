@@ -44,7 +44,7 @@
         }
 
         function Update(assessment) {
-            return $http.put('public/index.php/assessments/' + assessment.id, applicant).then(handleSuccess, handleError('Error updating user'));
+            return $http.put('public/index.php/assessments/' + assessment.id, assessment).then(handleSuccess, handleError('Error updating user'));
         }
 
         function Delete(id) {

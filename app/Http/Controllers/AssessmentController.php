@@ -67,7 +67,17 @@ class AssessmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $assessment =Assessment::find($id);
+
+        $assessment->assessment_name = $request->assessment_name;
+        $assessment->loan_id         = $request->loan_id;
+        $assessment->minimum_score   = $request->minimum_score;
+
+        if(!$assessment->save()){
+            return "failed";
+        }else{
+            return "success";
+        }
     }
 
     /**
@@ -78,6 +88,13 @@ class AssessmentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $assessment = Assessment::find($id);
+
+        if(!$assessment->delete()){
+            return "failed";
+        }else{
+            return "success";
+        }
+
     }
 }
