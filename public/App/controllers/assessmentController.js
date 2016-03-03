@@ -8,9 +8,9 @@
         .module('microfinanceApp')
         .controller('assessmentController', assessmentController);
 
-    assessmentController.$inject = ['$scope','$cookies','$timeout','$routeParams','$window','$filter','$location','LoanService','AuthenticationService','AssessmentService','ApplicationService','GrantService','QuestionService','DTOptionsBuilder'];
+    assessmentController.$inject = ['$scope','$route','$cookies','$timeout','$routeParams','$window','$filter','$location','LoanService','AuthenticationService','AssessmentService','ApplicationService','GrantService','QuestionService','DTOptionsBuilder'];
 
-    function assessmentController($scope,$cookies,$timeout,$routeParams,$window,$filter,$location,LoanService,AuthenticationService,AssessmentService,ApplicationService,GrantService,QuestionService,DTOptionsBuilder) {
+    function assessmentController($scope,$route,$cookies,$timeout,$routeParams,$window,$filter,$location,LoanService,AuthenticationService,AssessmentService,ApplicationService,GrantService,QuestionService,DTOptionsBuilder) {
         var assessment = this;
 
         $scope.loans = [];
@@ -88,15 +88,25 @@
         }
 
         assessment.cancelAdd = function(){
-            $location.path('/settings/interview/');
+
         }
 
         $scope.loadAddQuestionForm = function(){
             $scope.moreassessment_panelclass = "col-md-7";
             $scope.showleft_form = true;
+            $location.path('/settings/interview/more/'+$routeParams.id);
         }
 
         $scope.cancelAddQuestionForm = function(){
+            $route.reload();
+
+            $scope.moreassessment_panelclass = "col-md-12";
+            $scope.showleft_form = false;
+        }
+
+        $scope.cancelEditQuestionForm = function(){
+            $route.reload();
+
             $scope.moreassessment_panelclass = "col-md-12";
             $scope.showleft_form = false;
         }
