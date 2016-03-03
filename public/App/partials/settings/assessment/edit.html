@@ -1,15 +1,14 @@
 <div class="panel"  ng-controller="assessmentController as assess">
     <div class="panel-heading">
-        <div class="panel-title"> <i class="fa fa-plus"></i> Edit Assessment </div>
+        <div class="panel-title"> <i class="fa fa-plus"></i> Edit {{currentAssessment.assessment_name}} for {{associatedLoan.name}} ({{associatedLoan.code}}) </div>
     </div>
     <div class="panel-body" >
-        <form class="form-horizontal" role="form" ng-submit="assess.saveAssessment(assessment)">
+        <form class="form-horizontal" role="form" ng-submit="assess.updateAssessment(assessment)">
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="assessment_name">Assessment Name</label>
                     <select class="form-control" id="assessment_name" ng-model="assessment.assessment_name" required="">
-                        <option selected="=selected" disabled="disabled">-- Select Assessment --</option>
-                        <option name="Qualitative Assessment">Qualitative Assessment</option>
+                        <option name="Qualitative Assessment" >Qualitative Assessment</option>
                         <option name="Quantitative Assessment">Quantitative Assessment</option>
                     </select>
                 </div>

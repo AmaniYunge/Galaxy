@@ -54,6 +54,18 @@
                 });
 
             }
+
+            if($location.path().indexOf('/edit')>=0){
+                var assessmentId =$routeParams.id;
+                AssessmentService.GetById(assessmentId).then(function(data){
+                    angular.extend($scope.currentAssessment,data);
+                    $scope.associatedLoan = assessment.getLoanById($scope.currentAssessment.loan_id);
+                    //$scope.getQuestionsFromAssessment(assessmentId);
+                    //angular.extend($scope.currentAssessment,assessment.getLoanById(data.loan_id));
+
+                });
+
+            }
         }
 
 
@@ -88,7 +100,6 @@
         }
 
         assessment.cancelAdd = function(){
-            console.log("abcd");
             $location.path("/settings/interview");
         }
 
