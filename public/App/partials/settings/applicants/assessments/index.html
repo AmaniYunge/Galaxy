@@ -1,0 +1,47 @@
+<div class="col-md-12" ng-controller="applicantController as applicant">
+    <div class="col-md-12">
+
+        <div class="panel" >
+            <div class="panel-heading">
+                <div class="panel-title"> <i class="fa fa-table"></i> Applicant Interviews </div>
+                <div class="panel-field pull-right">
+                    <a  ng-href="#/applicants/1/addInterview" class="btn btn-sm btn-primary" >New Interview</a>
+                </div>
+            </div>
+            <div class="panel-body">
+                <ul class="nav well-tabs well-tabs-inverse margin-bottom">
+                </ul>
+                <div class="tab-content border-none padding-none">
+                    <div id="tab1" class="tab-pane active">
+
+
+                        <table class="table table-condensed" datatable="ng" dt-options="dtOptions">
+                        <!--<table class="table table-condensed" >-->
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Date Taken</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="exp in expenses  track by $index">
+
+                                <td>{{$index+1}}</td>
+                                <td>{{$index+1}}</td>
+                                <td>{{exp.name}} </td>
+                                <td>
+                                    <a style="cursor: pointer" ng-click="applicant.editInterview(exp.id)" title="edit interview" class="edituser"><i class="fa fa-pencil text-info"></i> edit</a>&nbsp;&nbsp;&nbsp;
+                                    <a style="cursor: pointer"  ng-click="applicant.deleteInterview(exp.id)" title="delete interview" class="deleteapp"><i class="fa fa-trash-o text-danger"></i> delete</a>
+
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
