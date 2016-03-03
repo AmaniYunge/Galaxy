@@ -132,6 +132,16 @@
             $scope.leftFormUrl = "public/App/partials/settings/questions/edit.html";
         }
 
+        $scope.deleteQuestion = function(question){
+            QuestionService.Delete(question.id).then(function(response){
+                $scope.success = true;
+                assessment.getCurrentAssessment();
+            },function(response){
+                $scope.failure = true;
+                //$route.reload();
+            });
+        }
+
         $scope.updateQuestion = function(question){
             $scope.failure = false;
             $scope.success = false;
