@@ -58,7 +58,9 @@ class ApplicantController extends Controller
      */
     public function show($id)
     {
-        //
+        $applicant = Applicant::find($id);
+
+        return $applicant;
     }
 
 

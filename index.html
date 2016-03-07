@@ -90,6 +90,7 @@
     <script src="public/App/controllers/loanController.js"></script>
     <script src="public/App/controllers/expensesController.js"></script>
     <script src="public/App/controllers/liabilityController.js"></script>
+    <script src="public/App/controllers/groupController.js"></script>
     <script src="public/App/controllers/assetController.js"></script>
     <script src="public/App/controllers/applicationController.js"></script>
     <script src="public/App/controllers/financeController.js"></script>
@@ -102,6 +103,7 @@
     <script src="public/App/controllers/debtorsController.js"></script>
     <script src="public/App/services/AuthenticationService.js"></script>
     <script src="public/App/controllers/assessmentController.js"></script>
+    <script src="public/App/services/GroupService.js"></script>
     <script src="public/App/services/UserService.js"></script>
     <script src="public/App/services/CashAccountService.js"></script>
     <script src="public/App/services/QuestionService.js"></script>
@@ -213,7 +215,8 @@
                 <ul id="sidethree" class="nav sub-nav">
                     <li><a ng-href="#/settings/start_capital"><span class="fa fa-bank"></span>&nbsp;&nbsp;Start Capital</a></li>
                     <li><a ng-href="#/settings/loans"><span class="fa fa-cc-visa"></span>&nbsp;&nbsp;Loans</a></li>
-                    <li><a  ng-href="#/applicants"><span class="fa fa-users "></span>&nbsp;&nbsp;Applicants</a></li>
+                    <li><a  ng-href="#/groups"><span class="fa fa-group "></span>&nbsp;&nbsp;Groups</a></li>
+                    <li><a  ng-href="#/applicants"><span class="fa fa-user "></span>&nbsp;&nbsp;Applicants</a></li>
                     <li><a  ng-href="#/settings/interview"><span class="fa fa-question "></span>&nbsp;&nbsp;Interview</a></li>
                     <li><a  ng-href="#/settings/expenses"><span class="fa fa-scissors"></span>&nbsp;&nbsp;Expenses</a></li>
                     <li><a  ng-href="#/settings/liabilities"><span class="fa fa-bitbucket"></span>&nbsp;&nbsp;Liabilites</a></li>
@@ -237,7 +240,7 @@
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-home"></i></a></li>
         <li><a href="#/dashboard">Home</a></li>
-        <li class="active">Dashboard</li>
+        <li class="active">{{breadcumb}}</li>
     </ol>
 
     <ol class="breadcrumb pull-right">

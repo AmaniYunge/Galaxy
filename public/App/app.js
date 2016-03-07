@@ -28,6 +28,19 @@
             //    templateUrl: "public/App/partials/applicants.html",
             //    controller:"applicantController"
             //})
+            .when('/groups', {
+                templateUrl: "public/App/partials/settings/groups/index.html",
+                controller:"groupController"
+            })
+            .when('/groups/:id/edit', {
+                templateUrl: "public/App/partials/settings/groups/edit.html",
+                controller:"groupController"
+            })
+
+            .when('/groups/add', {
+                templateUrl: "public/App/partials/settings/groups/add.html",
+                controller:"groupController"
+            })
 
             .when('/applicants/add', {
                 templateUrl: "public/App/partials/settings/applicants/add.html",

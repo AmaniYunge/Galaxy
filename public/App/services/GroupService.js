@@ -8,10 +8,10 @@
 
     angular
         .module('microfinanceApp')
-        .factory('AssessmentService', AssessmentService);
+        .factory('GroupService', GroupService);
 
-    AssessmentService.$inject = ['$http'];
-    function AssessmentService($http) {
+    GroupService.$inject = ['$http'];
+    function GroupService($http) {
         var service = {};
         service.largestId = [];
         service.current = null;
@@ -20,51 +20,35 @@
         service.Create = Create;
         service.Update = Update;
         service.Delete = Delete;
-        service.Questions = Questions;
         service.CheckLoanReturns = CheckLoanReturns;
         service.GetGrantedLoan = GetGrantedLoan;
         service.getLastReturn = getLastReturn;
         service.GetApplicantYearly = GetApplicantYearly;
-        service.saveAssessmentResponse = saveAssessmentResponse;
-        service.getAssessmentResponse = getAssessmentResponse;
         service.max = max;
         return service;
 
         function GetAll() {
-            return $http.get('public/index.php/assessments').then(handleSuccess, handleError('Error getting all users'));
+            return $http.get('public/index.php/groups').then(handleSuccess, handleError('Error getting all users'));
         }
 
         function GetApplicantYearly(year) {
-            return $http.get('public/index.php/assessments/year/'+year+'/get').then(handleSuccess, handleError('Error getting all users'));
+            return $http.get('public/index.php/applicants/year/'+year+'/get').then(handleSuccess, handleError('Error getting all users'));
         }
 
         function GetById(id) {
-            return $http.get('public/index.php/assessments/' + id).then(handleSuccess, handleError('Error getting user by id'));
+            return $http.get('public/index.php/groups/' + id).then(handleSuccess, handleError('Error getting user by id'));
         }
 
-        function Create(assessment) {
-            return $http.post('public/index.php/assessments', assessment).then(handleSuccess, handleError('Error creating user'));
+        function Create(group) {
+            return $http.post('public/index.php/groups', group).then(handleSuccess, handleError('Error creating user'));
         }
 
-        function Update(assessment) {
-            return $http.put('public/index.php/assessments/' + assessment.id, assessment).then(handleSuccess, handleError('Error updating user'));
+        function Update(applicant) {
+            return $http.put('public/index.php/groups/' + applicant.id, applicant).then(handleSuccess, handleError('Error updating user'));
         }
 
         function Delete(id) {
-            return $http.delete('public/index.php/assessments/' + id).then(handleSuccess, handleError('Error deleting user'));
-        }
-
-
-        function Questions(id) {
-            return $http.get('public/index.php/assessments/' + id+'/questions').then(handleSuccess, handleError('Error deleting user'));
-        }
-
-        function saveAssessmentResponse(response) {
-            return $http.post('public/index.php/assessments/'+response.assessment+'/response', response).then(handleSuccess, handleError('Error creating user'));
-        }
-
-        function getAssessmentResponse(response) {
-            return $http.post('public/index.php/assessments/'+response+'/qestionresponse', response).then(handleSuccess, handleError('Error creating user'));
+            return $http.delete('public/index.php/groups/' + id).then(handleSuccess, handleError('Error deleting user'));
         }
 
 
@@ -81,9 +65,9 @@
             };
 
 
-        function CheckLoanReturns(assessment) {
-            if(assessment!=null){
-                if(assessment.loan_returns.length>0){
+        function CheckLoanReturns(applicant) {
+            if(applicant!=null){
+                if(applicant.loan_returns.length>0){
                     return true;
                 }
             }

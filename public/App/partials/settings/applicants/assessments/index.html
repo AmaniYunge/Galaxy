@@ -6,7 +6,10 @@
                 <div class="panel-field pull-right">
                     <a  ng-href="#/applicant/{{applicantInfo.id}}/interview/add" class="btn btn-sm btn-primary" >New Interview</a>
                 </div>
+
+
             </div>
+
             <div class="panel-body">
                 <ul class="nav well-tabs well-tabs-inverse margin-bottom">
                 </ul>
@@ -20,16 +23,18 @@
                             <tr>
                                 <th>#</th>
                                 <th>Name</th>
+                                <th>Score</th>
                                 <th>Date Taken</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr ng-repeat="exp in expenses  track by $index">
+                            <tr ng-repeat="interview in interview_scores  track by $index">
 
                                 <td>{{$index+1}}</td>
-                                <td>{{$index+1}}</td>
-                                <td>{{exp.name}} </td>
+                                <td>{{interview.assessment_name}}</td>
+                                <td>{{interview.obtained_score}}</td>
+                                <td> </td>
                                 <td>
                                     <a style="cursor: pointer" ng-click="applicant.editInterview(exp.id)" title="edit interview" class="edituser"><i class="fa fa-pencil text-info"></i> edit</a>&nbsp;&nbsp;&nbsp;
                                     <a style="cursor: pointer"  ng-click="applicant.deleteInterview(exp.id)" title="delete interview" class="deleteapp"><i class="fa fa-trash-o text-danger"></i> delete</a>
@@ -39,6 +44,9 @@
                             </tbody>
                         </table>
                     </div>
+                </div>
+                <div class="panel-field pull-left">
+                    <a  ng-href="#/applicants/" class="btn btn-sm btn-primary" ><i class="fa fa-arrow-circle-left"></i>back</a>
                 </div>
             </div>
         </div>

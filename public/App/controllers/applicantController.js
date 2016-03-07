@@ -8,12 +8,14 @@
         .module('microfinanceApp')
         .controller('applicantController', applicantController);
 
-    applicantController.$inject = ['$scope','$cookies','$timeout','$routeParams','AssessmentService','$window','$filter','$location','AuthenticationService','ApplicantService','ApplicationService','LoanService','DTOptionsBuilder'];
+    applicantController.$inject = ['$scope','$cookies','$timeout','$routeParams','AssessmentService','GroupService','$window','$filter','$location','AuthenticationService','ApplicantService','ApplicationService','LoanService','DTOptionsBuilder'];
 
-    function applicantController($scope,$cookies,$timeout,$routeParams,AssessmentService,$window,$filter,$location,AuthenticationService,ApplicantService,ApplicationService,LoanService,DTOptionsBuilder) {
+    function applicantController($scope,$cookies,$timeout,$routeParams,AssessmentService,GroupService,$window,$filter,$location,AuthenticationService,ApplicantService,ApplicationService,LoanService,DTOptionsBuilder) {
             var applicant = this;
             applicant.appllicants = {};
             $scope.hideFormToken = false;
+
+            //$scope.$parent.breadcumb = $location.path();
 
         /**
          * Applicant datatables
@@ -27,16 +29,32 @@
                     $scope.loans  = data;
                 });
             }
-            applicant.loadLoans();
             applicant.loadApplicants = function(){
                 ApplicantService.GetAll().then(function(data){
                     applicant.appllicants  = data;
                     $scope.applicants  = data;
                 });
             }
+            applicant.loadgroups = function(){
+                GroupService.GetAll().then(function(data){
+                    applicant.groups  = data;
+                    console.log(data);
+                });
+            }
+
+            $scope.sponsor_type = null;
+            applicant.individual_form = false;
+            applicant.stateSponsor = function(data){
+                if(data=='group'){
+                    applicant.group_sponsor = true;
+                    applicant.individual_form = false;
+                }else{
+                    applicant.group_sponsor = false;
+                    applicant.individual_form = true;
+                }
+            }
 
 
-            applicant.loadApplicants();
 
 
         /**
@@ -51,6 +69,7 @@
          * save form values
          * */
         applicant.save = function(applicant){
+            console.log(applicant);
             $scope.applicant = null;
             $scope.success = false;
             $scope.failure = false;
@@ -195,35 +214,116 @@
         }
 
         applicant.loadApplicantAssessments = function(applicantId){
+            //console.log(applicantId);
+        }
 
+        applicant.loadApplicant = function(applicantId){
+            applicant.applicant = {};
+            ApplicantService.GetById(applicantId).then(function(data){
+                applicant.applicant = data;
+            });
+        }
+
+        applicant.prepareScores = function(data,assessments){
+            var score_assessment = [];
+
+
+            angular.forEach(assessments,function(value){
+                angular.forEach(data,function(valueAssess){
+                    if(valueAssess[value.id]){
+                        value.obtained_score = (valueAssess[value.id]/value.minimum_score*100).toFixed(0)+"%";
+                        score_assessment.push(value);
+                    }
+                });
+
+            });
+
+
+
+            return score_assessment;
         }
 
         $scope.vailablequestions = null;
         applicant.getQuestions  =   function(assessment){
            var assessment =  JSON.parse(assessment);
+            applicant.selectedAssessment = assessment;
+            angular.extend(applicant.selectedAssessment,applicant.getLoan($scope.loans,applicant.selectedAssessment.loan_id));
+
             $scope.questions = null;
             AssessmentService.Questions(assessment.id).then(function(data){
             $scope.questions = data.questions;
             });
 
         }
+        $scope.interview_scores = null;
+        applicant.getAssessmentResponse = function(id){
+            AssessmentService.getAssessmentResponse(id).then(function(data){
+
+                AssessmentService.GetAll().then(function(assessments){
+                    $scope.interview_scores = applicant.prepareScores(data,assessments);
+                });
+
+
+
+            });
+
+        }
+
+        applicant.saveQuestion = function(applicant_id,assessment_id,question_id,answer){
+            var response = answer.split("_");
+            var response = {applicant:applicant_id,assessment:assessment_id,question:question_id,answer:response[0],score:response[1]};
+            AssessmentService.saveAssessmentResponse(response).then(function(data){
+               if(data=="success"){
+
+               }
+            });
+
+        }
+
+        applicant.getLoan = function(loans,loan_id){
+            var loan = {};
+            angular.forEach(loans,function(value){
+                if(value.id == loan_id){
+                    loan  = value;
+                    return value;
+                }
+            })
+
+            return loan;
+        }
 
         $scope.assessments = null;
         applicant.loadAssessments = function(){
             AssessmentService.GetAll().then(function(data){
                 $scope.assessments = data;
+                angular.forEach($scope.assessments,function(value,index){
+                    angular.extend($scope.assessments[index],applicant.getLoan($scope.loans,value.loan_id));
+                })
             });
         }
 
-        applicant.info();
-        applicant.loadAssessments();
+
+
+        if($routeParams.id){
+            applicant.getAssessmentResponse($routeParams.id);
+        }
+
 
         /// chacke if assesment was requested
         if($location.path().indexOf("interview/add")>=0){
             applicant.loadApplicantAssessments($routeParams.id);
+            applicant.loadApplicant($routeParams.id);
         }
 
+        $scope.$watch(applicant.applicant,function(val1,val2){
 
+        });
+
+        applicant.loadLoans();
+        applicant.info();
+        applicant.loadApplicants();
+        applicant.loadAssessments();
+        applicant.loadgroups();
 
     }
 

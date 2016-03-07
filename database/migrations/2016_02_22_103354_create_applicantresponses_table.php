@@ -14,8 +14,10 @@ class CreateApplicantresponsesTable extends Migration
     {
         Schema::create('applicantresponse', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('applicant_id');
             $table->string('assessment_id');
             $table->string('question_id');
+            $table->string('answer');
             $table->string('score');
             $table->string('created_by');
             $table->timestamps();

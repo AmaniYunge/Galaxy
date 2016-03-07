@@ -21,6 +21,7 @@ Route::resource('assets', 'AssetController');
 Route::resource('applications', 'ApplicationController');
 Route::resource('recentApplications/{period}/{value}/get', 'ApplicationController@recentApplication');
 Route::resource('loans', 'LoanController');
+Route::resource('groups', 'GroupController');
 Route::resource('sponsors', 'SponsorController');
 Route::resource('accounts', 'AccountController');
 Route::resource('company_profits', 'CompanyProfitController');
@@ -34,6 +35,8 @@ Route::resource('questions/{id}/interview_questions', 'QuestionController@loadBy
 Route::resource('answers', 'AnswersController');
 Route::resource('assessments', 'AssessmentController');
 Route::resource('assessments/{id}/questions', 'AssessmentController@question');
+Route::resource('assessments/{id}/response', 'AssessmentController@response');
+Route::resource('assessments/{id}/qestionresponse', 'AssessmentController@qestionresponse');
 Route::resource('finances', 'FinancialTransactionController');
 Route::resource('finances/{period}/{value}/get', 'FinancialTransactionController@recentTransaction');
 Route::resource('homeprint', 'HomeController@getPdf');

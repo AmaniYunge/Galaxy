@@ -3,42 +3,63 @@
     <div class="col-md-12">
         <div class="panel" >
             <div class="panel-heading">
-                <div class="panel-title">Assesing {{}}</div>
+                <div class="panel-title">Loan Assessment | {{applicant.applicant.first_name}} {{applicant.applicant.last_name}} : {{applicant.selectedAssessment.assessment_name}} </div>
             </div>
             <div class="panel-body" >
                 <div class="bs-example" >
                     <div class="col-md-12">
                         <label for="assessment">* Select Assessment</label>
                         <select id="assessment" class="form-control" ng-model="picked" ng-change="applicant.getQuestions(picked)">
-                            <option ng-repeat="interview in assessments" value="{{interview}}">{{interview.assessment_name}} ({{interview.loan_id}})</option>
+                            <option ng-repeat="interview in assessments" value="{{interview}}">{{interview.assessment_name}} ({{interview.code}})</option>
                         </select>
                     </div>
 
-                    <div class="col-md-12">
+                    <div class="col-md-12" >
                         <br/>
                         <br/>
-                        <div ng-repeat="question in questions | orderBy:'question_number'">
-                            <div class="media-left">
-                                <a >
-                                    <h4>{{question.question_number}}&nbsp;.</h4>
-                                </a>
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">{{question.description}}</h4>
-                                <div class="col-md-2">
-                                    <label for="{{question.id}}">Response</label>
-                                    <select class="form-control" id="{{question.id}}">
-                                        <option selected="selected" disabled="disabled"></option>
-                                        <option value="{{question.score_for_yes}}">YES</option>
-                                        <option value="{{question.score_for_no}}">NO</option>
-                                    </select>
+                        <h4 ng-if="applicant.selectedAssessment">{{applicant.selectedAssessment.assessment_name}} for {{applicant.selectedAssessment.name}} ({{applicant.selectedAssessment.code}})</h4>
+                        <br/>
+                        <br/>
+                        <div style="border: 1px solid #cccccc;padding:10px;" ng-if="questions">
+                            <br/>
+                            <br/>
+                            <div ng-repeat="question in questions | orderBy:'question_number'">
+                                <div class="media-left">
+                                    <a >
+                                        <h4>{{question.question_number}}&nbsp;.</h4>
+                                    </a>
                                 </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">{{question.description}}</h4>
+                                    <div class="col-md-2">
+                                        <label for="{{question.id}}">Response</label>
+                                        <select class="form-control" id="{{question.id}}" ng-model="answer" ng-change="applicant.saveQuestion(applicant.applicant.id,applicant.selectedAssessment.id,question.id,answer)">
+                                            <option selected="selected" disabled="disabled"></option>
+                                            <option value="YES_{{question.score_for_yes}}">YES</option>
+                                            <option value="NO_{{question.score_for_no}}">NO</option>
+                                        </select>
+                                    </div>
 
+                                </div>
+                                <br/>
+                                <br/>
                             </div>
-                            <br/>
-                            <br/>
-                        </div>
 
+
+                            <br/>
+                            <a class="btn btn-sm btn-primary" ng-href="#/applicant/{{applicant.applicant.id}}/interview"><i class="fa fa-arrow-circle-left"></i>&nbsp;back</a>
+
+                        </div>
+                        <div style="border: 1px solid #cccccc;padding:10px;" ng-if="!questions">
+                            <br/>
+                            There are no Questions in this assessment&nbsp;<a class="btn btn-sm btn-primary" ng-href="#/applicant/{{applicant.applicant.id}}/interview"><i class="fa fa-arrow-circle-left"></i>&nbsp;back</a>
+                            <br/>
+                            <br/>
+
+
+
+
+                        </div>
 
                     </div>
 

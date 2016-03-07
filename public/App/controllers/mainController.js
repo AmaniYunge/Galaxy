@@ -10,9 +10,9 @@
         .module('microfinanceApp')
         .controller('mainController', mainController);
 
-    mainController.$inject = ['$scope','$window','AuthenticationService','CompanyService','DTOptionsBuilder'];
+    mainController.$inject = ['$scope','$window','$routeParams','$location','AuthenticationService','CompanyService','DTOptionsBuilder'];
 
-    function mainController($scope,$window,AuthenticationService,CompanyService,DTOptionsBuilder) {
+    function mainController($scope,$window,$routeParams,$location,AuthenticationService,CompanyService,DTOptionsBuilder) {
         $scope.isLogedIn = false;
         CompanyService.GetAll().then(function(data){
             //console.log(data);
@@ -22,6 +22,11 @@
 
         });
         $scope.format = 'yyyy-M-d  h:mm:ss a';
+        //$scope.breadcumb = $location.path();
+        //$scope.$watch($scope.breadcumb,function(value1,value2){
+            //$scope.breadcumb = $scope.breadcumb.substring(Math.min(1, $scope.breadcumb.length));
+        //});
+
     }
 
 })();

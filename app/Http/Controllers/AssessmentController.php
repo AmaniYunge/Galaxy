@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Assessment;
+use App\Applicantresponse;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use DB;
 class AssessmentController extends Controller
 {
+
+    var $ids = 0;
     /**
      * Display a listing of the resource.
      *
@@ -40,7 +43,6 @@ class AssessmentController extends Controller
             return "failed";
         }else{
             // when assessment is sent successfully add
-//            $assessment->
             return "success";
         }
     }
@@ -70,6 +72,90 @@ class AssessmentController extends Controller
 
         return $assessment;
     }
+
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function response(Request $request, $id)
+    {
+        $response = new Applicantresponse();
+        $response->applicant_id  = $request->applicant;
+        $response->assessment_id = $request->assessment;
+        $response->question_id   = $request->question;
+        $response->answer        = $request->answer;
+        $response->score         = $request->score;
+
+        if(!$response->save()){
+            return "failed";
+        }else{
+            return "success";
+        }
+
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function qestionresponse($id)
+    {
+
+        $responses = DB::table('applicantresponse') ->where('applicantresponse.applicant_id', '=', $id)->get();
+
+        $response_array = array();
+        $assess_array = array();
+        $count = 0;
+
+        $array_of_assessment = array();
+        $number_of_assessment_taken = 0;
+        foreach($responses as $single_response ) {
+            if(in_array($single_response->assessment_id,$array_of_assessment)){
+                $number_of_assessment_taken++;
+            }else{
+                array_push($array_of_assessment,$single_response->assessment_id);
+            }
+        }
+
+        foreach($responses as $single_response ) {
+
+
+            foreach($response_array as $index=>$arr){
+                if(array_key_exists($single_response->assessment_id,$response_array[$index])){
+                    $response_array[$index][$single_response->assessment_id]+=$single_response->score;
+                }else{
+                    if($count<$number_of_assessment_taken){
+                        $assess_array = array($single_response->assessment_id=>$single_response->score);
+                        $assess_array[$single_response->assessment_id]=$single_response->score;
+                        array_push($response_array,$assess_array);
+                    }
+
+                }
+
+            }
+
+            if(array_key_exists($single_response->assessment_id,$assess_array)){
+                $assess_array[$single_response->assessment_id]+=$single_response->score;
+            }else{
+                $assess_array = array($single_response->assessment_id=>$single_response->score);
+                $assess_array[$single_response->assessment_id]=$single_response->score;
+            }
+
+            if($count==1){
+                array_push($response_array,$assess_array);
+            }
+
+            $count++;
+        }
+
+        return json_encode($response_array);
+    }
+
 
     /**
      * Update the specified resource in storage.
