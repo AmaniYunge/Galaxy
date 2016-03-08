@@ -175,10 +175,15 @@
             //    templateUrl: "public/App/partials/settings/applications/index.html",
             //    controller:"applicationController"
             //})
+
             .when('/users/add', {
-                 templateUrl: "public/App/partials/add_manage.html"
-            }).when('/users/manage', {
-               templateUrl: "public/App/partials/add_manage.html"
+                 templateUrl: "public/App/partials/settings/users/add.html"
+            })
+            .when('/users/:id/edit', {
+                 templateUrl: "public/App/partials/settings/users/edit.html"
+            })
+            .when('/users/manage', {
+               templateUrl: "public/App/partials/settings/users/index.html"
             })
             .otherwise("/dashboard");
     }

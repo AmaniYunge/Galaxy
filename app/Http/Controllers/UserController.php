@@ -15,19 +15,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all()->load('logs');
+        $users = User::all();
         return $users;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -37,7 +29,28 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new User();
+
+        $user->first_name       = $request->first_name;
+        $user->middle_name      = $request->middle_name;
+        $user->last_name        = $request->last_name;
+        $user->gender           = $request->gender;
+        $user->birth_date       = $request->birth_date;
+        $user->phone            = $request->phone;
+        $user->postal_address   = $request->postal_address;
+//        $user->role             = $request->role;
+        $user->role             = 'ADMIN';
+//        $user->status           = $request->status;
+        $user->status           = 'ACTIVE';
+        $user->email            = $request->email;
+        $user->password         = $request->password;
+
+        if(!$user->save()){
+            return "failed";
+        }else{
+            return "success";
+        }
+
     }
 
 
@@ -90,6 +103,12 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $users = User::find($id);
+
+        if(!$users->delete()){
+            return "failed";
+        }else{
+            return "success";
+        }
     }
 }

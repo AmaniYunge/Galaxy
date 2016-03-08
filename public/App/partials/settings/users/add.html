@@ -1,0 +1,82 @@
+<div class="panel"  ng-controller="userController as users">
+    <div class="panel-heading">
+        <div class="panel-title"> <i class="fa fa-plus"></i> Add User </div>
+    </div>
+    <div class="panel-body" >
+
+        <form class="form-horizontal" role="form" ng-submit="users.saveUser(user)">
+            <div class="col-md-12">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="first_name">First Name</label>
+                        <input id="first_name" name="first_name" type="text"   ng-model="user.first_name" class="form-control" placeholder="First Name" required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="middle_name">Middle Name</label>
+                        <input id="middle_name" name="middle_name" type="text" ng-model="user.middle_name" class="form-control" placeholder="Middle Name" required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="last_name">Last Name</label>
+                        <input id="last_name" name="last_name" type="text" ng-model="user.last_name" class="form-control" placeholder="Last Name" required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender" ng-model="user.gender" class="form-control">
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="birth_date">Birth Date</label>
+
+                        <input datepicker id="birth_date" name="birth_date" type="text" ng-model="user.birth_date" class="form-control" placeholder="Birth Date" required="">
+
+
+                    </div>
+
+
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input id="phone" name="phone" type="text"  ng-model="user.phone"  class="form-control" placeholder="Phone" required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="postal_address">Postal Address</label>
+                        <input id="postal_address" name="postal_address" type="text"  ng-model="user.postal_address"   class="form-control" placeholder="Postal Address" required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="text"  ng-model="user.email"   class="form-control" placeholder="Email" required="" />
+
+                    </div>
+                    <div class="form-group">
+                        <label for="username">User name</label>
+                        <input id="username" name="username" type="text"  ng-model="user.username"   class="form-control" placeholder="User Name" required="" />
+
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input id="password" name="password" type="text"  ng-model="user.password" class="form-control" placeholder="Password" required="">
+                    </div>
+
+
+
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-sm-12 form-group text-center">
+                    <input class="btn btn-primary"  type="submit" value="Add">
+                    <input class="btn btn-warning"  type="reset" value="Reset">
+                    <a class="btn btn-danger"  ng-href="#/users/manage"  >Cancel</a>
+                </div>
+
+            </div>
+            </form>
+        <div class="col-md-12">
+            <div class="alert alert-success " ng-if="success">User <b> {{current.name}} </b> Registered Successfully.</div>
+            <div class="alert alert-warning" ng-if="failure">User <b> {{current.name}} </b> Fail Registration.</div>
+        </div>
+    </div>
+</div>

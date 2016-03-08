@@ -1,0 +1,56 @@
+<div class="col-md-12" ng-controller="userController as user">
+    <div class="col-md-12">
+
+        <div class="panel" >
+            <div class="panel-heading">
+                <div class="panel-title"> <i class="fa fa-table"></i> Users </div>
+                <div class="panel-field pull-right">
+                    <a  ng-href="#/users/add" class="btn btn-sm btn-primary" >Add User</a>
+                </div>
+            </div>
+
+            <div class="panel-body">
+                <ul class="nav well-tabs well-tabs-inverse margin-bottom">
+                </ul>
+                <div class="tab-content border-none padding-none">
+                    <div id="tab1" class="tab-pane active">
+
+
+                        <table class="table table-condensed" datatable="ng" dt-options="dtOptions">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Gender</th>
+                                <th>Phone</th>
+                                <th>Address</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="us in user.users">
+
+                                <td>{{$index+1}}</td>
+                                <td>{{us.first_name}} {{us.middle_name}} {{us.last_name}} </td>
+                                <td>{{us.gender}}</td>
+                                <td>{{us.phone}}</td>
+                                <td>{{us.postal_address}}</td>
+                                <td>{{us.email}}</td>
+                                <td>{{us.role}}</td>
+                                <td>
+                                    <a style="cursor: pointer" ng-href="#/users/{{us.id}}/edit" title="edit asset" class="edituser"><i class="fa fa-pencil text-info"></i> edit</a>&nbsp;&nbsp;&nbsp;
+                                    <a style="cursor: pointer"  ng-click="user.deleteUser(us.id)" title="delete asset" class="deleteapp"><i class="fa fa-trash-o text-danger"></i> delete</a>
+
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

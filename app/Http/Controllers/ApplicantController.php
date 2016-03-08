@@ -43,6 +43,8 @@ class ApplicantController extends Controller
         $applicant->residence = $request->residence;
         $applicant->family_size = $request->family_size;
 
+        if($request->first_name)
+
         if(!$applicant->save()){
             return "failed";
         }else{

@@ -36,15 +36,15 @@
         }
 
         function Create(user) {
-            return $http.post('/api/users', user).then(handleSuccess, handleError('Error creating user'));
+            return $http.post('public/index.php/users', user).then(handleSuccess, handleError('Error creating user'));
         }
 
         function Update(user) {
-            return $http.put('/api/users/' + user.id, user).then(handleSuccess, handleError('Error updating user'));
+            return $http.put('public/index.php/users/' + user.id, user).then(handleSuccess, handleError('Error updating user'));
         }
 
         function Delete(id) {
-            return $http.delete('/api/users/' + id).then(handleSuccess, handleError('Error deleting user'));
+            return $http.delete('public/index.php/users/' + id).then(handleSuccess, handleError('Error deleting user'));
         }
 
         // private functions

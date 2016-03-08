@@ -38,7 +38,6 @@
             applicant.loadgroups = function(){
                 GroupService.GetAll().then(function(data){
                     applicant.groups  = data;
-                    console.log(data);
                 });
             }
 
@@ -69,7 +68,6 @@
          * save form values
          * */
         applicant.save = function(applicant){
-            console.log(applicant);
             $scope.applicant = null;
             $scope.success = false;
             $scope.failure = false;
