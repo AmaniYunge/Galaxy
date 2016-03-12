@@ -28,9 +28,10 @@
       <file leaf-file-name="add.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/App/partials/settings/users/add.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="576">
+            <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="324">
               <caret line="6" column="80" selection-start-line="6" selection-start-column="76" selection-end-line="6" selection-end-column="80" />
               <folding>
+                <element signature="tag#form#0;tag#div#1;tag#div#0" expanded="false" />
                 <element signature="tag#div#0;tag#div#0;tag#form#0;tag#div#1;tag#div#0" expanded="false" />
                 <element signature="tag#div#2;tag#div#0;tag#form#0;tag#div#1;tag#div#0" expanded="false" />
               </folding>
@@ -41,20 +42,23 @@
       <file leaf-file-name="add.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/App/partials/settings/applicants/add.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1191" max-vertical-offset="1692">
-              <caret line="6" column="48" selection-start-line="6" selection-start-column="12" selection-end-line="81" selection-end-column="20" />
+            <state vertical-scroll-proportion="-7.3333335" vertical-offset="0" max-vertical-offset="846">
+              <caret line="179" column="0" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
               <folding>
-                <element signature="tag#div#0;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
+                <element signature="tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
+                <element signature="tag#form#1;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
+                <element signature="n#style#0;n#h4#0;n#form#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="tag#form#2;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/App/partials/settings/applicants/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5294118" vertical-offset="342" max-vertical-offset="3780">
-              <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="666" max-vertical-offset="3780">
+              <caret line="37" column="56" selection-start-line="37" selection-start-column="56" selection-end-line="37" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -85,30 +89,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="applicantController.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="applicantController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/App/controllers/applicantController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="811" max-vertical-offset="1908">
-              <caret line="69" column="44" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.54634833" vertical-offset="691" max-vertical-offset="2790">
+              <caret line="69" column="27" selection-start-line="69" selection-start-column="27" selection-end-line="69" selection-end-column="27" />
               <folding>
                 <element signature="e#1083#1218#0" expanded="false" />
                 <element signature="e#1268#1464#0" expanded="false" />
-                <element signature="e#1790#2095#0" expanded="false" />
-                <element signature="e#2404#3449#0" expanded="false" />
-                <element signature="e#3515#4701#0" expanded="false" />
-                <element signature="e#4769#5788#0" expanded="false" />
-                <element signature="e#5854#6033#0" expanded="false" />
-                <element signature="e#6070#7736#0" expanded="false" />
-                <element signature="e#7912#8092#0" expanded="false" />
-                <element signature="e#8154#8634#0" expanded="false" />
-                <element signature="e#8733#9157#0" expanded="false" />
-                <element signature="e#9252#9541#0" expanded="false" />
-                <element signature="e#9631#9979#0" expanded="false" />
-                <element signature="e#10032#10290#0" expanded="false" />
-                <element signature="e#10373#10705#0" expanded="false" />
-                <element signature="e#10736#10809#0" expanded="false" />
-                <element signature="e#10914#11044#0" expanded="false" />
-                <element signature="e#11107#11119#0" expanded="false" />
+                <element signature="e#3859#5045#0" expanded="false" />
+                <element signature="e#5113#6132#0" expanded="false" />
+                <element signature="e#6414#8080#0" expanded="false" />
+                <element signature="e#8256#8436#0" expanded="false" />
+                <element signature="e#8498#8978#0" expanded="false" />
+                <element signature="e#9077#9501#0" expanded="false" />
+                <element signature="e#9596#9885#0" expanded="false" />
+                <element signature="e#9975#10323#0" expanded="false" />
+                <element signature="e#10376#10634#0" expanded="false" />
+                <element signature="e#10717#11049#0" expanded="false" />
+                <element signature="e#11080#11153#0" expanded="false" />
+                <element signature="e#11258#11388#0" expanded="false" />
+                <element signature="e#11451#11463#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -209,8 +210,6 @@
         <option value="$PROJECT_DIR$/public/App/partials/settings/groups/edit.html" />
         <option value="$PROJECT_DIR$/public/App/partials/settings/assessment/more.html" />
         <option value="$PROJECT_DIR$/public/App/controllers/mainController.js" />
-        <option value="$PROJECT_DIR$/public/App/partials/settings/applicants/add.html" />
-        <option value="$PROJECT_DIR$/public/App/controllers/applicantController.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/public/App/services/UserService.js" />
         <option value="$PROJECT_DIR$/public/App/partials/settings/users/add.html" />
@@ -220,6 +219,8 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
         <option value="$PROJECT_DIR$/public/App/controllers/userController.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApplicantController.php" />
+        <option value="$PROJECT_DIR$/public/App/partials/settings/applicants/add.html" />
+        <option value="$PROJECT_DIR$/public/App/controllers/applicantController.js" />
       </list>
     </option>
   </component>
@@ -228,10 +229,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="64" />
-    <option name="y" value="-4" />
-    <option name="width" value="1537" />
-    <option name="height" value="905" />
+    <option name="x" value="65" />
+    <option name="y" value="24" />
+    <option name="width" value="1535" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -379,66 +380,6 @@
               <option name="myItemId" value="settings" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="users" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="galaxy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="galaxy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="partials" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="settings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="galaxy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="galaxy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="partials" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="settings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -467,114 +408,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="applicants" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="galaxy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="galaxy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="galaxy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="galaxy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="galaxy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="galaxy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="galaxy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="galaxy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="galaxy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="galaxy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="galaxy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="galaxy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -649,18 +482,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-4" width="1537" height="905" extended-state="6" />
+    <frame x="65" y="24" width="1535" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38280725" sideWeight="0.49920508" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38818" sideWeight="0.49920508" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43337485" sideWeight="0.10228013" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23589744" sideWeight="0.8970684" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24983211" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23589744" sideWeight="0.8970684" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36870384" sideWeight="0.5007949" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -735,7 +568,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/App/controllers/applicantController.js</url>
-          <line>168</line>
+          <line>176</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -794,12 +627,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/App/controllers/applicantController.js</url>
-          <line>224</line>
+          <line>232</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/App/controllers/applicantController.js</url>
-          <line>315</line>
+          <line>323</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
@@ -1125,33 +958,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/App/controllers/applicantController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="811" max-vertical-offset="1908">
-          <caret line="69" column="44" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="44" />
-          <folding>
-            <element signature="e#1083#1218#0" expanded="false" />
-            <element signature="e#1268#1464#0" expanded="false" />
-            <element signature="e#1790#2095#0" expanded="false" />
-            <element signature="e#2404#3449#0" expanded="false" />
-            <element signature="e#3515#4701#0" expanded="false" />
-            <element signature="e#4769#5788#0" expanded="false" />
-            <element signature="e#5854#6033#0" expanded="false" />
-            <element signature="e#6070#7736#0" expanded="false" />
-            <element signature="e#7912#8092#0" expanded="false" />
-            <element signature="e#8154#8634#0" expanded="false" />
-            <element signature="e#8733#9157#0" expanded="false" />
-            <element signature="e#9252#9541#0" expanded="false" />
-            <element signature="e#9631#9979#0" expanded="false" />
-            <element signature="e#10032#10290#0" expanded="false" />
-            <element signature="e#10373#10705#0" expanded="false" />
-            <element signature="e#10736#10809#0" expanded="false" />
-            <element signature="e#10914#11044#0" expanded="false" />
-            <element signature="e#11107#11119#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Applicant.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="756">
@@ -1194,11 +1000,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/App/partials/settings/applicants/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="666" max-vertical-offset="3780">
+          <caret line="37" column="56" selection-start-line="37" selection-start-column="56" selection-end-line="37" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/App/partials/settings/users/add.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="576">
+        <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="324">
           <caret line="6" column="80" selection-start-line="6" selection-start-column="76" selection-end-line="6" selection-end-column="80" />
           <folding>
+            <element signature="tag#form#0;tag#div#1;tag#div#0" expanded="false" />
             <element signature="tag#div#0;tag#div#0;tag#form#0;tag#div#1;tag#div#0" expanded="false" />
             <element signature="tag#div#2;tag#div#0;tag#form#0;tag#div#1;tag#div#0" expanded="false" />
           </folding>
@@ -1207,19 +1022,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/App/partials/settings/applicants/add.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1191" max-vertical-offset="1692">
-          <caret line="6" column="48" selection-start-line="6" selection-start-column="12" selection-end-line="81" selection-end-column="20" />
+        <state vertical-scroll-proportion="-7.3333335" vertical-offset="0" max-vertical-offset="846">
+          <caret line="179" column="0" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
           <folding>
-            <element signature="tag#div#0;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
+            <element signature="tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
+            <element signature="tag#form#1;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
+            <element signature="n#style#0;n#h4#0;n#form#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="tag#form#2;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/App/partials/settings/applicants/index.html">
+    <entry file="file://$PROJECT_DIR$/public/App/controllers/applicantController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5294118" vertical-offset="342" max-vertical-offset="3780">
-          <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
-          <folding />
+        <state vertical-scroll-proportion="0.54634833" vertical-offset="691" max-vertical-offset="2790">
+          <caret line="69" column="27" selection-start-line="69" selection-start-column="27" selection-end-line="69" selection-end-column="27" />
+          <folding>
+            <element signature="e#1083#1218#0" expanded="false" />
+            <element signature="e#1268#1464#0" expanded="false" />
+            <element signature="e#3859#5045#0" expanded="false" />
+            <element signature="e#5113#6132#0" expanded="false" />
+            <element signature="e#6414#8080#0" expanded="false" />
+            <element signature="e#8256#8436#0" expanded="false" />
+            <element signature="e#8498#8978#0" expanded="false" />
+            <element signature="e#9077#9501#0" expanded="false" />
+            <element signature="e#9596#9885#0" expanded="false" />
+            <element signature="e#9975#10323#0" expanded="false" />
+            <element signature="e#10376#10634#0" expanded="false" />
+            <element signature="e#10717#11049#0" expanded="false" />
+            <element signature="e#11080#11153#0" expanded="false" />
+            <element signature="e#11258#11388#0" expanded="false" />
+            <element signature="e#11451#11463#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

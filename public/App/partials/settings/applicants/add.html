@@ -1,10 +1,10 @@
 <div class="col-md-12" ng-controller="applicantController as vm">
     <div class="panel">
         <div class="panel-heading">
-            <div class="panel-title"> <i class="fa fa-plus"></i> Register Applicants </div>
+            <div class="panel-title"> <i class="fa fa-plus"></i> Register {{applicant_label}} </div>
         </div>
         <div class="panel-body">
-            <form class="form-horizontal" role="form" ng-submit="vm.save(applicant)">
+            <form class="form-horizontal" role="form" ng-submit="vm.save(applicant)" ng-if="!showSponsorForm">
               <div class="col-md-12">
               <div class="col-md-5">
                   <div class="form-group">
@@ -34,13 +34,6 @@
 
                   </div>
 
-                  <div class="form-group">
-                      <label for="birth_date">Sponsor Type</label>
-                      <select class="form-control" ng-model="sponsor_type" ng-change="vm.stateSponsor(sponsor_type)">
-                          <option value="individual">Individual</option>
-                          <option value="group">Group</option>
-                      </select>
-                  </div>
 
               </div>
                   <div class="col-md-2"></div>
@@ -81,28 +74,50 @@
               </div>
               </div>
 
-                <div class="col-md-12" ng-show="vm.individual_form">
-                    <br/>
-                    <br/>
-                    <br/>
-                    <h4> Sponsor Details</h4>
-                    <br/>
+                <div class="col-md-12">
+                    <div class="col-md-6 col-lg-offset-3">
+                        <div class="col-sm-12 form-group text-center">
+                            <input class="btn btn-primary"  type="submit" value="Register">
+                            <input class="btn btn-warning"  type="reset" value="Reset">
+                            <a class="btn btn-danger"  href="#/applicants"  >Cancel</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <form class="form-horizontal" role="form" ng-if="showSponsorForm">
+                <h4 style="text-align:center;">Applicant Sponsor Registration</h4><br/>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="birth_date">Sponsor Type</label>
+                        <select class="form-control" ng-model="sponsor_type" ng-change="vm.stateSponsor(sponsor_type)">
+                            <option value="individual">Individual</option>
+                            <option value="group">Group</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+
+            <form class="form-horizontal" role="form" ng-submit="vm.saveSponsor(sponsor)" ng-if="vm.individual_form">
+
+
+                <div class="col-md-12" >
                     <div class="col-md-5">
                         <div class="form-group">
-                            <label for="sponsor_first_name">First Name</label>
-                            <input id="sponsor_first_name"  type="text"   ng-model="applicant.sponsor_first_name" class="form-control" placeholder="First Name" >
+                            <label for="first_name">First Name</label>
+                            <input id="first_name" name="first_name" type="text"   ng-model="sponsor.first_name" class="form-control" placeholder="First Name" required="">
                         </div>
                         <div class="form-group">
-                            <label for="sponsor_middle_name">Middle Name</label>
-                            <input id="sponsor_middle_name"  type="text" ng-model="applicant.sponsor_middle_name" class="form-control" placeholder="Middle Name" >
+                            <label for="middle_name">Middle Name</label>
+                            <input id="middle_name" name="middle_name" type="text" ng-model="sponsor.middle_name" class="form-control" placeholder="Middle Name" required="">
                         </div>
                         <div class="form-group">
-                            <label for="sponsor_last_name">Last Name</label>
-                            <input id="sponsor_last_name"  type="text" ng-model="applicant.sponsor_last_name" class="form-control" placeholder="Last Name" >
+                            <label for="last_name">Last Name</label>
+                            <input id="last_name" name="last_name" type="text" ng-model="sponsor.last_name" class="form-control" placeholder="Last Name" required="">
                         </div>
                         <div class="form-group">
-                            <label for="sponsor_gender">Gender</label>
-                            <select id="sponsor_gender"  ng-model="applicant.sponsor_gender" class="form-control">
+                            <label for="gender">Gender</label>
+                            <select id="gender" name="gender" ng-model="sponsor.gender" class="form-control">
                                 <option>Male</option>
                                 <option>Female</option>
                             </select>
@@ -110,25 +125,27 @@
                         <div class="form-group">
                             <label for="birth_date">Birth Date</label>
 
-                            <input datepicker id="sponsor_birth_date"  type="text" ng-model="applicant.sponsor_birth_date" class="form-control" placeholder="Birth Date" >
+                            <input datepicker id="birth_date" name="birth_date" type="text" ng-model="sponsor.birth_date" class="form-control" placeholder="Birth Date" required="">
 
 
                         </div>
+
+
 
                     </div>
                     <div class="col-md-2"></div>
                     <div class="col-md-5">
                         <div class="form-group">
-                            <label for="sponsor_phone">Phone</label>
-                            <input id="sponsor_phone"  type="text"  ng-model="applicant.sponsor_phone"  class="form-control" placeholder="Phone" >
+                            <label for="phone">Phone</label>
+                            <input id="phone" name="phone" type="text"  ng-model="sponsor.phone"  class="form-control" placeholder="Phone" required="">
                         </div>
                         <div class="form-group">
-                            <label for="sponsor_postal_address">Postal Address</label>
-                            <input id="sponsor_postal_address"  type="text"  ng-model="applicant.sponsor_postal_address"   class="form-control" placeholder="Postal Address" >
+                            <label for="postal_address">Postal Address</label>
+                            <input id="postal_address" name="postal_address" type="text"  ng-model="sponsor.postal_address"   class="form-control" placeholder="Postal Address" required="">
                         </div>
                         <div class="form-group">
-                            <label for="sponsor_marital_status">Marital Status</label>
-                            <select id="sponsor_marital_status"  type="text"  ng-model="applicant.sponsor_marital_status"   class="form-control" placeholder="Marital Status" >
+                            <label for="marital_status">Marital Status</label>
+                            <select id="marital_status" name="marital_status" type="text"  ng-model="sponsor.marital_status"   class="form-control" placeholder="Marital Status" required="">
                                 <option>Single</option>
                                 <option>Married</option>
                                 <option>Divorced</option>
@@ -136,12 +153,41 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="sponsor_residence">Residence</label>
-                            <input id="sponsor_residence"  type="text"  ng-model="applicant.sponsor_residence" class="form-control" placeholder="Residence" >
+                            <label for="residence">Residence</label>
+                            <input id="residence" name="residence" type="text"  ng-model="sponsor.residence" class="form-control" placeholder="Residence" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="birth_date">Family Size</label>
+                            <input id="family_size" name="family_size" type="text"  ng-model="sponsor.family_size"  class="form-control" placeholder="Family Size" required="">
                         </div>
 
 
+
                     </div>
+                </div>
+
+
+                <div class="col-md-12">
+                    <div class="col-md-6 col-lg-offset-3">
+                        <div class="col-sm-12 form-group text-center">
+                            <input class="btn btn-primary"  type="submit" value="Register">
+                            <input class="btn btn-warning"  type="reset" value="Reset">
+                            <a class="btn btn-danger"  href="#/applicants"  >Cancel</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+            <form class="form-horizontal" role="form" ng-submit="vm.saveGroupSponsor(sponsorGroup)" ng-if="vm.group_sponsor">
+
+                <div class="col-md-12">
+                <div class="form-group" >
+                    <label for="group">Group</label>
+                    <select id="group" class="form-control" ng-model="sponsorGroup.group_id">
+                        <option ng-repeat="group in vm.groups" value="group.id">{{group.name}}</option>
+                    </select>
+                </div>
                 </div>
 
                 <div class="col-md-12">
@@ -154,6 +200,7 @@
                     </div>
                 </div>
             </form>
+
             <div class="col-md-12">
                 <div class="alert alert-success " ng-if="success">Applicant <b> {{current.first_name}} {{current.middle_name}} {{current.last_name}}  </b> Registered Successfully.</div>
                 <div class="alert alert-warning" ng-if="failure">Applicant <b> {{current.first_name}} {{current.middle_name}} {{current.last_name}}  </b> Fail Registration.</div>

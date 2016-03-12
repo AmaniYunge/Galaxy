@@ -63,6 +63,8 @@
         $scope.failure = false;
         $scope.message = "";
         $scope.current = null;
+        $scope.applicant_label = "New Applicant";
+        $scope.showSponsorForm = false;
 
         /**
          * save form values
@@ -83,6 +85,8 @@
                             $scope.applicant = null;
                             $scope.success = false;
                             $scope.failure = false;
+                            $scope.applicant_label = $scope.current.first_name+" "+$scope.current.last_name+"'s Sponsor";
+                            $scope.showSponsorForm = true;
                         }, 1000);
                     }
                 },function(respense){
@@ -94,6 +98,10 @@
                     }, 1000);
                 });
             }
+        }
+
+        applicant.saveSponsor = function(sponsor,applicant){
+
         }
 
         applicant.saveLoanApplication = function(newApplication){
