@@ -32,23 +32,22 @@ class ApplicantController extends Controller
     {
         $applicant = new Applicant();
 
-        $applicant->first_name = $request->first_name;
-        $applicant->middle_name = $request->middle_name;
-        $applicant->last_name = $request->last_name;
-        $applicant->gender = $request->gender;
-        $applicant->birth_date = $request->birth_date;
-        $applicant->phone = $request->phone;
+        $applicant->first_name   = $request->first_name;
+        $applicant->middle_name  = $request->middle_name;
+        $applicant->last_name    = $request->last_name;
+        $applicant->gender       = $request->gender;
+        $applicant->birth_date   = $request->birth_date;
+        $applicant->phone        = $request->phone;
         $applicant->postal_address = $request->postal_address;
         $applicant->marital_status = $request->marital_status;
-        $applicant->residence = $request->residence;
-        $applicant->family_size = $request->family_size;
+        $applicant->residence      = $request->residence;
+        $applicant->family_size    = $request->family_size;
 
-        if($request->first_name)
 
         if(!$applicant->save()){
             return "failed";
         }else{
-            return "success";
+            return json_encode(array('id'=>$applicant->id,'status'=>"success"));
         }
     }
 
@@ -61,6 +60,17 @@ class ApplicantController extends Controller
     public function show($id)
     {
         $applicant = Applicant::find($id);
+
+        return $applicant;
+    }
+    /**
+     * Display the specified resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function sponsored()
+    {
+        $applicant = Applicant::has('applicantsponsor')->get();
 
         return $applicant;
     }

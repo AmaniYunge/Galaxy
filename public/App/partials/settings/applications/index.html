@@ -3,7 +3,7 @@
         <div class="panel-heading">
             <div class="panel-title"> <i class="fa fa-table"></i> Loan Applications </div>
             <div class="panel-field pull-right">
-                <a ng-href="#/settings/applications/add" class="btn btn-sm btn-primary" >Add Application</a>
+                <a ng-href="#/applications/add" class="btn btn-sm btn-primary" >Add Application</a>
             </div>
         </div>
         <div class="panel-body">
@@ -26,7 +26,6 @@
                             <th>Sponsor Name</th>
                             <th>Loan Applied</th>
                             <th>Amount Applied</th>
-                            <!--<th>Amount Granted</th>-->
                             <th>Date Applied</th>
                             <th>Action</th>
                         </tr>
@@ -39,14 +38,10 @@
                             <td>{{application.sponsor.first_name}} {{application.sponsor.middle_name}} {{application.sponsor.last_name}}</td>
                             <td>{{application.loan.name}}</td>
                             <td>{{application.applied_amount}}</td>
-                            <!--<td>{{application.granted_amount}}</td>-->
-                            <!--<td>{{application.status}}</td>-->
-                            <!--<td>{{application.collateral}}</td>-->
-                            <!--<td>{{application.collateral_value}}</td>-->
                             <td>{{application.created_at}}</td>
                             <td  class=" ">
-                                <a href="#/settings/applications/{{application.id}}/more" title="View Application Information" class="edituser"><i class="fa fa-list text-success"></i> info</a>&nbsp;&nbsp;&nbsp;
-                                <a href="#/settings/applications/{{application.id}}/{{application.applicants.id}}/grant" title="Grant Loan " class="loanapp"><i class="fa fa-money text-warning"></i> grant</a>&nbsp;&nbsp;&nbsp;
+                                <a href="#/applications/{{application.id}}/more" title="View Application Information" class="edituser"><i class="fa fa-list text-success"></i> info</a>&nbsp;&nbsp;&nbsp;
+                                <a href="#/applications/{{application.id}}/{{application.applicants.id}}/grant" title="Grant Loan " class="loanapp"><i class="fa fa-money text-warning"></i> grant</a>&nbsp;&nbsp;&nbsp;
                                 <a style="cursor: pointer;" ng-if="application.status=='pending'" ng-click="declineApplication(application.id)" title="edit Staff" class="edituser"><i class="fa fa-times  text-danger"></i> decline</a>
                                 <a style="cursor: pointer;" ng-if="application.status=='declined'" ng-click="acceptDeclinedApplication(application.id)" title="edit Staff" class="edituser"><i class="fa fa-thumbs-up  text-info"></i> accept</a>
 
@@ -199,13 +194,10 @@
                         <tr>
                             <th>#</th>
                             <th>Applicant Name</th>
+                            <th>Sponsor Type</th>
                             <th>Sponsor Name</th>
                             <th>Loan Applied</th>
                             <th>Amount Applied</th>
-                            <!--<th>Amount Granted</th>-->
-                            <!--<th>Status</th>-->
-                            <!--<th>Collateral</th>-->
-                            <!--<th>Collatteral Value</th>-->
                             <th>Date Applied</th>
                             <th>Action</th>
                         </tr>
@@ -218,10 +210,6 @@
                             <td>{{application.sponsor.first_name}} {{application.sponsor.middle_name}} {{application.sponsor.last_name}}</td>
                             <td>{{application.loan.name}}</td>
                             <td>{{application.applied_amount}}</td>
-                            <!--<td>{{application.granted_amount}}</td>-->
-                            <!--<td>{{application.status}}</td>-->
-                            <!--<td>{{application.collateral}}</td>-->
-                            <!--<td>{{application.collateral_value}}</td>-->
                             <td>{{application.created_at}}</td>
                             <td  class=" ">
                                 <a href="#/settings/applications/{{application.id}}/more" title="View Application Information" class="edituser"><i class="fa fa-list text-success"></i> info</a>&nbsp;&nbsp;&nbsp;

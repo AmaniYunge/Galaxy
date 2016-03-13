@@ -8,9 +8,9 @@
         .module('microfinanceApp')
         .controller('applicantController', applicantController);
 
-    applicantController.$inject = ['$scope','$cookies','$timeout','$routeParams','AssessmentService','GroupService','$window','$filter','$location','AuthenticationService','ApplicantService','ApplicationService','LoanService','DTOptionsBuilder'];
+    applicantController.$inject = ['$scope','$cookies','$timeout','$routeParams','AssessmentService','ApplicantsponsorService','GroupService','$window','$filter','$location','AuthenticationService','ApplicantService','ApplicationService','LoanService','DTOptionsBuilder'];
 
-    function applicantController($scope,$cookies,$timeout,$routeParams,AssessmentService,GroupService,$window,$filter,$location,AuthenticationService,ApplicantService,ApplicationService,LoanService,DTOptionsBuilder) {
+    function applicantController($scope,$cookies,$timeout,$routeParams,AssessmentService,ApplicantsponsorService,GroupService,$window,$filter,$location,AuthenticationService,ApplicantService,ApplicationService,LoanService,DTOptionsBuilder) {
             var applicant = this;
             applicant.appllicants = {};
             $scope.hideFormToken = false;
@@ -54,8 +54,6 @@
             }
 
 
-
-
         /**
          * Controlling the applicant registration form
          * */
@@ -73,14 +71,15 @@
             $scope.applicant = null;
             $scope.success = false;
             $scope.failure = false;
+            $scope.applicant_id = null;
             if(applicant){
                 $scope.current = applicant;
                 ApplicantService.Create(applicant).then(function(respense){
-                    if(respense=="success"){
+                    if(respense.status=="success"){
                         $scope.applicant = null;
                         $scope.success = true;
                         $scope.failure = false;
-
+                        $scope.applicant_id = respense.id;
                         $timeout(function () {
                             $scope.applicant = null;
                             $scope.success = false;
@@ -100,39 +99,48 @@
             }
         }
 
-        applicant.saveSponsor = function(sponsor,applicant){
+        applicant.saveSponsor = function(sponsor){
+            angular.extend(sponsor,{type:'individual',applicantid:$scope.applicant_id});
 
-        }
-
-        applicant.saveLoanApplication = function(newApplication){
-            $scope.applicant = null;
-            $scope.success = false;
-            $scope.failure = false;
-            if(newApplication){
-                newApplication.applicant_id = $routeParams.id;
-                $scope.current = newApplication;
-                ApplicationService.Create(newApplication).then(function(respense){
-                    if(respense=="success"){
-                        $scope.applicant = null;
-                        $scope.success = true;
-                        $scope.failure = false;
-                        $location.path("/applicants/manage");
-                        $timeout(function () {
-                            $scope.applicant = null;
-                            $scope.success = false;
-                            $scope.failure = false;
-                        }, 1000);
-                    }
-                },function(respense){
-                    $scope.failure = true;
-                    $scope.success = false;
+            ApplicantsponsorService.Create(sponsor,function(response){
+                if(response=="success"){
+                    $scope.applicant = null;
+                    $scope.success = true;
+                    $scope.failure = false;
                     $timeout(function () {
+                        $location.path("/applicants");
+                        $scope.applicant = null;
                         $scope.success = false;
                         $scope.failure = false;
                     }, 1000);
-                });
-            }
+                }
+            },function(){
+
+            });
         }
+        $scope.group_id = null;
+        applicant.saveGroupSponsor = function(sponsorGroup){
+            var sponsor = {type:'group',id:sponsorGroup,applicantid:$scope.applicant_id};
+
+            ApplicantsponsorService.Create(sponsor,function(response){
+                if(response=="success"){
+                    $scope.applicant = null;
+                    $scope.success = true;
+                    $scope.failure = false;
+                    $timeout(function () {
+                        $location.path("/applicants");
+                        $scope.applicant = null;
+                        $scope.success = false;
+                        $scope.failure = false;
+                    }, 1000);
+                }
+            },function(){
+
+            });
+
+        }
+
+
 
         applicant.updateLoanApplicant = function(updatedUpplicant){
 

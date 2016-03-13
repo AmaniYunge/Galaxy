@@ -19,6 +19,7 @@
             <th>#</th>
             <th>Name</th>
             <th>Code</th>
+            <th>Interest Rate (%)</th>
             <th>Action</th>
         </tr>
         </thead>
@@ -28,6 +29,7 @@
             <td>{{$index+1}}</td>
             <td>{{loan.name}}</td>
             <td>{{loan.code}}</td>
+            <td>{{loan.interest_rate}}</td>
             <td  class=" ">
                 <a href="#/settings/loans/{{loan.id}}/applications" title="View Loan Applications" class="loanapp"><i class="fa fa-briefcase text-warning"></i> applications</a>&nbsp;&nbsp;&nbsp;
                 <a ng-href="#/settings/loans/{{loan.id}}/edit" title="edit Staff" class="edituser"><i class="fa fa-pencil text-info"></i> edit</a>&nbsp;&nbsp;&nbsp;

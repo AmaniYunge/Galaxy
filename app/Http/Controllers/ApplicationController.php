@@ -64,24 +64,11 @@ class ApplicationController extends Controller
     public function store(Request $request)
     {
 
-        /// Add sponsor
-        $sponsor = new Sponsor();
-        $sponsor->first_name = $request->sponsor_first_name;
-        $sponsor->middle_name = $request->sponsor_middle_name;
-        $sponsor->last_name = $request->sponsor_last_name;
-        $sponsor->gender = $request->sponsor_gender;
-        $sponsor->phone = $request->sponsor_phone;
-        $sponsor->postal_address = $request->sponsor_postal_address;
-        $sponsor->residence = $request->sponsor_residence;
-        $sponsor->birth_date = $request->sponsor_birth_date;
-        $sponsor->occupation = $request->sponsor_occupation;
 
-        if($sponsor->save()){
             $application = new Application();
-            $application->applicant_id = $request->applicant_id;
-            $application->loan_id = $request->loan_id;
-            $application->sponsor_id  = $sponsor->id;
-            $application->applied_amount = $request->applied_amount;
+            $application->applicant_id   = $request->applicant;
+            $application->loan_id        = $request->loan_type;
+            $application->applied_amount = $request->amount_applied;
             $application->application_fee = $request->application_fee;
             $application->status = "pending";
             $application->comments = $request->comments;
@@ -93,8 +80,6 @@ class ApplicationController extends Controller
             }else{ return "success";
             }
 
-            echo json_encode($application);
-        }
 
     }
 

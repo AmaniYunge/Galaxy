@@ -100,7 +100,6 @@
 
             <form class="form-horizontal" role="form" ng-submit="vm.saveSponsor(sponsor)" ng-if="vm.individual_form">
 
-
                 <div class="col-md-12" >
                     <div class="col-md-5">
                         <div class="form-group">
@@ -122,12 +121,10 @@
                                 <option>Female</option>
                             </select>
                         </div>
+
                         <div class="form-group">
-                            <label for="birth_date">Birth Date</label>
-
-                            <input datepicker id="birth_date" name="birth_date" type="text" ng-model="sponsor.birth_date" class="form-control" placeholder="Birth Date" required="">
-
-
+                            <label for="occupation">Occupation</label>
+                            <input id="occupation" type="text" name="occupation" ng-model="sponsor.occupation" class="form-control" />
                         </div>
 
 
@@ -156,10 +153,7 @@
                             <label for="residence">Residence</label>
                             <input id="residence" name="residence" type="text"  ng-model="sponsor.residence" class="form-control" placeholder="Residence" required="">
                         </div>
-                        <div class="form-group">
-                            <label for="birth_date">Family Size</label>
-                            <input id="family_size" name="family_size" type="text"  ng-model="sponsor.family_size"  class="form-control" placeholder="Family Size" required="">
-                        </div>
+
 
 
 
@@ -179,13 +173,13 @@
             </form>
 
 
-            <form class="form-horizontal" role="form" ng-submit="vm.saveGroupSponsor(sponsorGroup)" ng-if="vm.group_sponsor">
+            <form class="form-horizontal" role="form" ng-submit="vm.saveGroupSponsor(group_id)" ng-if="vm.group_sponsor">
 
                 <div class="col-md-12">
                 <div class="form-group" >
                     <label for="group">Group</label>
-                    <select id="group" class="form-control" ng-model="sponsorGroup.group_id">
-                        <option ng-repeat="group in vm.groups" value="group.id">{{group.name}}</option>
+                    <select id="group" class="form-control" ng-model="group_id">
+                        <option ng-repeat="group in vm.groups" value="{{group.id}}">{{group.name}}</option>
                     </select>
                 </div>
                 </div>

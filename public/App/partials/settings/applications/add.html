@@ -8,18 +8,73 @@
     <div class="panel-body">
         <div class="row">
             <div class="col-xs-12 col-md-12">
-                <form class="form-horizontal ng-pristine ng-invalid ng-invalid-required ng-valid-pattern" ng-submit="grantApp.addApplication(applicant)">
+                <form class="form-horizontal ng-pristine ng-invalid ng-invalid-required ng-valid-pattern" ng-submit="saveLoanApplication(application)">
                     <div class="form-group">
                         <div class="col-md-6">
                             <label for="applicant">Applicant</label>
-                            <select id="applicant" ng-model="applicant" class="form-control" >
-                                <option>Select Applicants</option>
-                                <option></option>
-                                <option></option>
+                            <select id="applicant" ng-model="application.applicant" class="form-control" >
+                                <option ng-repeat="applicant in appicantsWithSponsor" value="{{applicant.id}}">{{applicant.first_name}} {{applicant.middle_name}} {{applicant.last_name}}</option>
+
                             </select>
                         </div>
+
+                        <div class="col-md-6">
+                            <label for="loan_type">Load Type</label>
+                            <select id="loan_type" ng-model="application.loan_type" class="form-control" >
+                                <option ng-repeat="loan in loans" value="{{loan.id}}">{{loan.name}}</option>
+                            </select>
+                        </div>
+
                     </div>
-                    <input class="btn btn-primary" type="submit" value="Register">
+
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <label for="amount">Amount Applied</label>
+                            <input id="amount" ng-model="application.amount_applied" class="form-control" />
+
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="application_fee">Application Fee</label>
+                            <input id="application_fee" ng-model="application.application_fee" class="form-control" />
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <label for="collateral">Collateral</label>
+                            <input id="collateral" ng-model="application.collateral" class="form-control" />
+
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="collateral_value">Collateral Value</label>
+                            <input id="collateral_value" ng-model="application.collateral_value" class="form-control" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="comments">Comments</label>
+                            <textarea id="comments" ng-model="application.comments" class="form-control" ></textarea>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="col-md-6 col-lg-offset-3">
+                            <div class="col-sm-12 form-group text-center">
+                                <input class="btn btn-primary"  type="submit" value="Register">
+                                <input class="btn btn-warning"  type="reset" value="Reset">
+                                <a class="btn btn-danger"  href="#/applications"  >Cancel</a>
+                            </div>
+                        </div>
+                    </div>
                 </form>
 
             </div>

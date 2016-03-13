@@ -23,12 +23,14 @@ Route::resource('recentApplications/{period}/{value}/get', 'ApplicationControlle
 Route::resource('loans', 'LoanController');
 Route::resource('groups', 'GroupController');
 Route::resource('sponsors', 'SponsorController');
+Route::resource('applicantsponsor', 'ApplicantsponsorController');
 Route::resource('accounts', 'AccountController');
 Route::resource('company_profits', 'CompanyProfitController');
 Route::resource('granted_loans', 'GrantedLoanController');
 Route::resource('loan_returns', 'LoanReturnController');
 Route::resource('logs', 'LogsController');
 Route::resource('applicants', 'ApplicantController');
+Route::resource('sponsored', 'ApplicantController@sponsored');
 Route::resource('applicants/{filter}/{value}/get', 'ApplicantFiltersController');
 Route::resource('questions', 'QuestionController');
 Route::resource('questions/{id}/interview_questions', 'QuestionController@loadByAssessment');

@@ -147,27 +147,27 @@
                 templateUrl: "public/App/partials/settings/start_capital/index.html",
                 controller:"companyController"
             })
-            .when('/settings/applications', {
+            .when('/applications', {
                 templateUrl: "public/App/partials/settings/applications/index.html",
                 controller:"applicationController"
             })
-            .when('/settings/applications/:id/more', {
+            .when('/applications/:id/more', {
                 templateUrl: "public/App/partials/settings/applications/more.html",
                 controller:"applicationController"
             })
-            .when('/settings/applications/add', {
+            .when('/applications/add', {
                 templateUrl: "public/App/partials/settings/applications/add.html",
                 controller:"applicationController"
             })
-            .when('/settings/applications/edit', {
+            .when('/applications/edit', {
                 templateUrl: "public/App/partials/settings/applications/more.html",
                 controller:"applicationController"
             })
-            .when('/settings/applications/delete', {
+            .when('/applications/delete', {
                 templateUrl: "public/App/partials/settings/applications/more.html",
                 controller:"applicationController"
             })
-            .when('/settings/applications/:id/:applicant_id/grant', {
+            .when('/applications/:id/:applicant_id/grant', {
                 templateUrl: "public/App/partials/settings/applications/grant.html",
                 controller:"applicationController"
             })

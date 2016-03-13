@@ -27,6 +27,11 @@ class Applicant extends Model
         return $this->hasMany('App\GrantedLoan','applicant_id','id');
     }
 
+    public function applicantsponsor()
+    {
+        return $this->hasOne('App\Applicantsponsor','applicant_id','id');
+    }
+
 
 
     public function loan_returns()

@@ -40,6 +40,7 @@ return array(
     'CreateExpensesTable' => $baseDir . '/database/migrations/2015_11_13_013818_create_expenses_table.php',
     'CreateFinancialTransactionsTable' => $baseDir . '/database/migrations/2015_11_13_081417_create_financial_transactions_table.php',
     'CreateGrantedLoansTable' => $baseDir . '/database/migrations/2015_11_13_084403_create_granted_loans_table.php',
+    'CreateGroupMembersTable' => $baseDir . '/database/migrations/2016_03_12_212744_create_group_members_table.php',
     'CreateGroupsTable' => $baseDir . '/database/migrations/2016_03_06_172754_create_groups_table.php',
     'CreateLiabilitiesTable' => $baseDir . '/database/migrations/2015_11_13_014006_create_liabilities_table.php',
     'CreateLoanReturnsTable' => $baseDir . '/database/migrations/2015_11_13_090235_create_loan_returns_table.php',

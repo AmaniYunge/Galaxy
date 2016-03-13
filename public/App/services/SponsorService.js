@@ -8,16 +8,15 @@
 
     angular
         .module('microfinanceApp')
-        .factory('ApplicantService', ApplicantService);
+        .factory('GroupService', GroupService);
 
-    ApplicantService.$inject = ['$http'];
-    function ApplicantService($http) {
+    GroupService.$inject = ['$http'];
+    function GroupService($http) {
         var service = {};
         service.largestId = [];
         service.current = null;
         service.GetAll = GetAll;
         service.GetById = GetById;
-        service.GetWithSponsor = GetWithSponsor;
         service.Create = Create;
         service.Update = Update;
         service.Delete = Delete;
@@ -29,7 +28,7 @@
         return service;
 
         function GetAll() {
-            return $http.get('public/index.php/applicants').then(handleSuccess, handleError('Error getting all users'));
+            return $http.get('public/index.php/groups').then(handleSuccess, handleError('Error getting all users'));
         }
 
         function GetApplicantYearly(year) {
@@ -37,22 +36,19 @@
         }
 
         function GetById(id) {
-            return $http.get('public/index.php/applicants/' + id).then(handleSuccess, handleError('Error getting user by id'));
-        }
-        function GetWithSponsor() {
-            return $http.get('public/index.php/sponsored/').then(handleSuccess, handleError('Error applicant with sponsor'));
+            return $http.get('public/index.php/groups/' + id).then(handleSuccess, handleError('Error getting user by id'));
         }
 
-        function Create(applicant) {
-            return $http.post('public/index.php/applicants', applicant).then(handleSuccess, handleError('Error creating user'));
+        function Create(group) {
+            return $http.post('public/index.php/groups', group).then(handleSuccess, handleError('Error creating user'));
         }
 
         function Update(applicant) {
-            return $http.put('public/index.php/applicants/' + applicant.id, applicant).then(handleSuccess, handleError('Error updating user'));
+            return $http.put('public/index.php/groups/' + applicant.id, applicant).then(handleSuccess, handleError('Error updating user'));
         }
 
         function Delete(id) {
-            return $http.delete('public/index.php/applicants/' + id).then(handleSuccess, handleError('Error deleting user'));
+            return $http.delete('public/index.php/groups/' + id).then(handleSuccess, handleError('Error deleting user'));
         }
 
 

@@ -42,7 +42,7 @@
                         $scope.loan = null;
                         $scope.success = true;
                         $scope.failure = false;
-                        loan.getLoans();
+                        //loan.getLoans();
                         $timeout(function () {
                             $scope.loan = null;
                             $scope.success = false;

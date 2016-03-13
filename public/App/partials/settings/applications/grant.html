@@ -17,6 +17,13 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label  class="control-label col-sm-3">Applied Loan</label>
+                            <div class="col-sm-9">
+                                {{applicationInfo.loan.name}} ({{applicationInfo.loan.code}})
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <label  class="control-label col-sm-3">Applied Amount (in Tsh)</label>
                             <div class="col-sm-9">
                                 {{applicationInfo.applied_amount}}
@@ -52,28 +59,28 @@
 
                         <div class="form-group">
                             <div class="col-sm-6">Return Interval<input class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" ng-model="grantApplication.return_interval" placeholder="Return Interval" required="required" type="text" value=""> </div>
-                            <div class="col-sm-6">Interval Type<br><input class="form-control ng-pristine ng-untouched ng-valid" ng-model="grantApplication.interval_type" placeholder="Interval Type" name="middlename"  required="required" type="text" value=""> </div>
+                            <div class="col-sm-6">Interval Type<br>
+                                <select class="form-control " ng-model="grantApplication.interval_type"  name="interval_type"  required="required">
+                                    <option>Weeks</option>
+                                    <option>Months</option>
+                                </select>
+                            </div>
                         </div>
-                        <!--<div class="form-group">-->
-                            <!--<div class="col-sm-6">Grant Amount<br><input class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" ng-model="grantApplication.loaned_amount" placeholder="Grant Amount" required="required" name="lastname" type="text" value=""> </div>-->
-                            <!--<div class="col-sm-6">Profit Percent<br>-->
-                                <!--<input class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" ng-model="grantApplication.profit_percent" required="required" name="lastname" type="text" value="{{}}">-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="form-group">-->
-                            <!--<div class="col-sm-6">Amount To Return<br><input class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" ng-model="grantApplication.amount_to_return" placeholder="Amount To Return" required="required" name="phone" type="text" value=""> </div>-->
-                            <!--<div class="col-sm-6"><span style="font-size: large;color: #ff0000;">*</span> Amount Per Return (if applicable)<br><input class="form-control ng-pristine ng-untouched ng-valid" ng-model="grantApplication.amount_per_return" placeholder="Amount Per Return" name="postal" type="text" value=""> </div>-->
-                        <!--</div>-->
                         <div class="form-group">
                             <div class="col-sm-6">Loan Due Date (Expected)<br><input datepicker class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" ng-model="grantApplication.loan_actual_due_date" placeholder="Loan Due Date" required="required" name="residense" type="text" value=""> </div>
-                            <div class="col-sm-6">Loan Duration<br><input class="form-control hasDatepicker ng-pristine ng-untouched ng-valid" ng-model="grantApplication.loan_duration" placeholder="Loan Duration" name="birthdate" type="text" value=""  required="required" > </div>
+                            <div class="col-sm-6">Loan Duration (in Months)<br><input class="form-control hasDatepicker ng-pristine ng-untouched ng-valid" ng-model="grantApplication.loan_duration" placeholder="Loan Duration" name="birthdate" type="text" value=""  required="required" > </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-6">Total Amount To Return<br><input  class="form-control " ng-model="grantApplication.amount_to_return" placeholder="Total Amount To Return" required="required" name="amount_to_return" type="text" value=""> </div>
+                            <div class="col-sm-6">Amount Per Return<br><input  class="form-control " ng-model="grantApplication.amount_per_return" placeholder="Amount Per Return" required="required" name="amount_per_return" type="text" value=""> </div>
                         </div>
 
                     </div>
                     <div class="form-group text-center">
                         <input class="btn btn-primary" type="submit" value="Grant">
                         <input class="btn btn-warning" type="reset" value="Reset">
-                        <a ng-href="#/settings/applications" class="btn btn-danger"><i class="fa fa-times"></i> Cancel</a>
+                        <a ng-href="#/applications" class="btn btn-danger"><i class="fa fa-times"></i> Cancel</a>
                     </div>
                 </form>
 
