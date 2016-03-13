@@ -16,6 +16,7 @@ class CreateApplicantSponsorsTable extends Migration
             $table->increments('id');
             $table->string('sponsor_type');
             $table->string('sponsor_id');
+            $table->string('applicant_id');
             $table->timestamps();
         });
     }
