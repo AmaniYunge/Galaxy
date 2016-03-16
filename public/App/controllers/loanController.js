@@ -80,6 +80,7 @@
         }
 
 
+
         $scope.loanInfo = null;
         loan.info = function(){
             if($routeParams.id){

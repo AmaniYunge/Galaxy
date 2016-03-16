@@ -37,7 +37,6 @@
             $scope.applicant = null;
             $scope.success = false;
             $scope.failure = false;
-
             ApplicationService.Create(newApplication).then(function(respense){
                 if(respense=="success"){
                     $scope.applicant = null;
@@ -95,13 +94,32 @@
 
         application.getApplicantWithSponsor();
 
+        $scope.selectedLoan = function(loanid){
 
+            angular.forEach($scope.loans,function(value){
+                if(value.id==loanid){
+                    $scope.application.amount_applied = value.principle_amount;
+                    $scope.application.code = value.code;
+                }
+            });
+
+        }
 
 
         application.info = function(){
             if($routeParams.id){
                 $scope.$watch('appllications',function(newValue,oldOne){
                     $scope.applicationInfo = $filter('filterById')($scope.appllications,$routeParams.id);
+                    console.log($scope.applicationInfo);
+                    if($scope.applicationInfo!=null){
+                        $scope.grantApplication.interval_type = "Months";
+                        $scope.grantApplication.return_interval = $scope.applicationInfo.loan.repayment_period;
+                        $scope.grantApplication.loan_duration = $scope.applicationInfo.loan.loan_duration;
+                        $scope.grantApplication.amount_to_return = LoanService.getAmountToReturn($scope.applicationInfo);
+                        $scope.grantApplication.amount_per_return = LoanService.getAmountPerReturn($scope.applicationInfo);
+                        $scope.grantApplication.loan_actual_due_date = LoanService.getDueDate($scope.applicationInfo);
+
+                    }
 
                 });
 

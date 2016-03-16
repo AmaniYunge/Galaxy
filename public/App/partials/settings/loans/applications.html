@@ -9,15 +9,13 @@
             </ul>
             <div class="tab-content border-none padding-none">
                 <div id="tab1" class="tab-pane active">
-
-
                     <table class="table table-condensed" datatable="ng" dt-options="dtOptions">
                         <thead>
                         <tr>
                             <th>#</th>
+                            <th>Loan Number</th>
                             <th>Applicant</th>
                             <th>Sponsor</th>
-                            <th>Applied Amount</th>
                             <th>Amount Granted</th>
                             <th>Collateral</th>
                             <th>Collateral Value</th>
@@ -31,10 +29,10 @@
                         <tr ng-repeat="loan in loanInfo.applications">
 
                             <td>{{$index+1}}</td>
+                            <td>{{loan.loan_number}}</td>
                             <td>{{loan.applicants.first_name}} {{loan.applicants.middle_name}} {{loan.applicants.last_name}}</td>
                             <td>{{loan.sponsor.first_name}} {{loan.sponsor.middle_name}} {{loan.sponsor.last_name}}</td>
-                            <td>{{loan.applied_amount}}</td>
-                            <td>{{loan.amount_granted}}</td>
+                           <td>{{loanInfo.principle_amount}}</td>
                             <td>{{loan.collateral}}</td>
                             <td>{{loan.collateral_value}}</td>
                             <td>{{loan.collateral}}</td>

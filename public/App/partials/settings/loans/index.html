@@ -19,6 +19,9 @@
             <th>#</th>
             <th>Name</th>
             <th>Code</th>
+            <th>Principle Amount</th>
+            <th>Loan Duration</th>
+            <th>Repayment Period</th>
             <th>Interest Rate (%)</th>
             <th>Action</th>
         </tr>
@@ -29,6 +32,9 @@
             <td>{{$index+1}}</td>
             <td>{{loan.name}}</td>
             <td>{{loan.code}}</td>
+            <td>{{loan.principle_amount}}</td>
+            <td>{{loan.loan_duration}}</td>
+            <td>{{loan.repayment_period}}</td>
             <td>{{loan.interest_rate}}</td>
             <td  class=" ">
                 <a href="#/settings/loans/{{loan.id}}/applications" title="View Loan Applications" class="loanapp"><i class="fa fa-briefcase text-warning"></i> applications</a>&nbsp;&nbsp;&nbsp;

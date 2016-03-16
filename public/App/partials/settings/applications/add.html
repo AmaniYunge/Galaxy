@@ -6,13 +6,14 @@
         </div>
     </div>
     <div class="panel-body">
+
         <div class="row">
             <div class="col-xs-12 col-md-12">
                 <form class="form-horizontal ng-pristine ng-invalid ng-invalid-required ng-valid-pattern" ng-submit="saveLoanApplication(application)">
                     <div class="form-group">
                         <div class="col-md-6">
                             <label for="applicant">Applicant</label>
-                            <select id="applicant" ng-model="application.applicant" class="form-control" >
+                            <select id="applicant" ng-model="application.applicant" class="form-control" required="">
                                 <option ng-repeat="applicant in appicantsWithSponsor" value="{{applicant.id}}">{{applicant.first_name}} {{applicant.middle_name}} {{applicant.last_name}}</option>
 
                             </select>
@@ -20,7 +21,7 @@
 
                         <div class="col-md-6">
                             <label for="loan_type">Load Type</label>
-                            <select id="loan_type" ng-model="application.loan_type" class="form-control" >
+                            <select id="loan_type" ng-model="application.loan_type" ng-change="selectedLoan(application.loan_type)" class="form-control" required="">
                                 <option ng-repeat="loan in loans" value="{{loan.id}}">{{loan.name}}</option>
                             </select>
                         </div>

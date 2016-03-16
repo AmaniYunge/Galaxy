@@ -36,6 +36,9 @@ class LoanController extends Controller
 
         $loan->name = $request->name;
         $loan->code = $request->code;
+        $loan->principle_amount = $request->principle_amount;
+        $loan->loan_duration = $request->loan_duration;
+        $loan->repayment_period = $request->repayment_period;
         $loan->interest_rate = $request->interest_rate;
         $loan->created_by = 1;
 
@@ -70,6 +73,9 @@ class LoanController extends Controller
 
         $loan->name = $request->name;
         $loan->code = $request->code;
+        $loan->principle_amount = $request->principle_amount;
+        $loan->loan_duration = $request->loan_duration;
+        $loan->repayment_period = $request->repayment_period;
         $loan->interest_rate = $request->interest_rate;
         $loan->created_by = 1;
 

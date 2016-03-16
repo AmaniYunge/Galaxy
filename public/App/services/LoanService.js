@@ -19,6 +19,9 @@
         service.Create = Create;
         service.Update = Update;
         service.Delete = Delete;
+        service.getAmountToReturn = getAmountToReturn;
+        service.getAmountPerReturn = getAmountPerReturn;
+        service.getDueDate = getDueDate;
 
         return service;
 
@@ -40,6 +43,26 @@
 
         function Delete(id) {
             return $http.delete('public/index.php/loans/' + id).then(handleSuccess, handleError('Error deleting user'));
+        }
+
+
+        function getAmountToReturn(applicationInfo) {
+            var duration         = parseInt(applicationInfo.loan.loan_duration);
+            var principle_amount = parseInt(applicationInfo.loan.principle_amount);
+            var interest_rate    = parseInt(applicationInfo.loan.interest_rate);
+            return getAmountPerReturn(applicationInfo)*duration;
+        }
+
+        function getAmountPerReturn(applicationInfo) {
+            var duration         = applicationInfo.loan.loan_duration;
+            var principle_amount = applicationInfo.loan.principle_amount;
+            var interest_rate    = applicationInfo.loan.interest_rate;
+            return (principle_amount/duration)+(principle_amount*interest_rate/100);
+        }
+        function getDueDate(applicationInfo) {
+            var newdate=new Date();
+
+            return newdate;
         }
 
         // private functions

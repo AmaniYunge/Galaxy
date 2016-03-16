@@ -6,29 +6,71 @@
         <div class="panel-body">
             <form class="form-horizontal" role="form" ng-submit="vm.saveLoanType(loan)">
                 <div class="col-md-12">
-                    <div class="col-md-5">
-                        <div class="form-group">
-                            <label for="name">Name:</label>
-                            <input id="name" name="name" type="text"   ng-model="loan.name" class="form-control" placeholder="Name" required="">
+                    <div class="col-md-6">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input id="name" name="name" type="text"   ng-model="loan.name" class="form-control" placeholder="Name" required="">
+                            </div>
                         </div>
+
                     </div>
-                    <div class="col-md-2"></div>
-                    <div class="col-md-5">
-                        <div class="form-group">
-                            <label for="code">Code:</label>
-                            <input  id="code" name="code" type="text" ng-model="loan.code" class="form-control" placeholder="Code" required="">
+                    <div class="col-md-6">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="code">Code:</label>
+                                <input  id="code" name="code" type="text" ng-model="loan.code" class="form-control" placeholder="Code" required="">
+                            </div>
                         </div>
+
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="interest_rate">Name:</label>
-                            <input id="interest_rate" name="name" type="text"   ng-model="loan.interest_rate" class="form-control" placeholder="Interest Rate" required="">
+                    <div class="col-md-6">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="principle_amount">Principle Amount:</label>
+                                <input id="principle_amount" name="principle_amount" type="text"   ng-model="loan.principle_amount" class="form-control" placeholder="Principle Amount" required="">
+                            </div>
                         </div>
-                    </div>
 
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="interest_rate">Interest Rate:</label>
+                                <input id="interest_rate" name="interest_rate" type="text"   ng-model="loan.interest_rate" class="form-control" placeholder="Interest Rate" required="">
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
+
+                <div class="col-md-12">
+
+                    <div class="col-md-6">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="loan_duration">Loan Duration:(Months)</label>
+                <input id="loan_duration" name="loan_duration" type="text"   ng-model="loan.loan_duration" class="form-control" placeholder="Loan Duration" required="">
+            </div>
+        </div>
+
+    </div>
+
+                    <div class="col-md-6">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="repayment_period">Repayment Period:</label>
+                <input id="repayment_period" name="repayment_period" type="text"   ng-model="loan.repayment_period" class="form-control" placeholder="Repayment Period" required="">
+            </div>
+        </div>
+
+    </div>
+                </div>
+
+
+
                 <div class="col-md-12">
                     <div class="col-md-6 col-lg-offset-3">
                         <div class="col-sm-12 form-group text-center">

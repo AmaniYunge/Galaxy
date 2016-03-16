@@ -14,6 +14,7 @@ class CreateApplicationsTable extends Migration
     {
         Schema::create('applications', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('loan_number');
             $table->integer('applicant_id');
             $table->integer('loan_id');
             $table->integer('sponsor_id');

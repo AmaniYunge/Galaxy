@@ -18,13 +18,14 @@ class Application extends Model
      */
     public function applicants()
     {
-        return $this->belongsTo('App\Applicant','applicant_id','id');
+        return $this->hasOne('App\Applicant','id','applicant_id');
     }
 
     public function sponsor()
     {
         return $this->hasOne('App\Sponsor','id','sponsor_id');
     }
+
     public function loan()
     {
         return $this->belongsTo('App\Loan','loan_id','id');

@@ -9,6 +9,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Application;
 use App\Sponsor;
+use DB;
+
 class ApplicationController extends Controller
 {
     /**
@@ -63,9 +65,35 @@ class ApplicationController extends Controller
      */
     public function store(Request $request)
     {
+              $rows =  DB::table('applications')->orderBy('created_at', 'desc')->first();
+              $number = $rows->loan_number;
+              $thisyear = date('Y');
+        if(strpos($number,$thisyear )){
+            $nummber_extracts = explode($thisyear,$rows->loan_number);
+            $newnumber = $nummber_extracts[1]+1;
+            $required_length = strlen($nummber_extracts[1]);
+            $substration_length = strlen($newnumber);
+
+            $left_length = $required_length-$substration_length;
+
+            if($left_length<=0){
+
+            }else{
+                $zeros = "";
+                for($i=0;$i<$left_length;$i++){
+                    $zeros.="0";
+                }
+
+            }
+
+            $loan_number = $request->code."-".$thisyear.$zeros.($nummber_extracts[1]+1);
+        }else{
+            $loan_number = $request->code."-".$thisyear."00001";
+        }
 
 
             $application = new Application();
+            $application->loan_number   = $loan_number;
             $application->applicant_id   = $request->applicant;
             $application->loan_id        = $request->loan_type;
             $application->applied_amount = $request->amount_applied;
@@ -77,9 +105,11 @@ class ApplicationController extends Controller
             $application->created_by = 1;
             if(!$application->save()){
                 return "failed";
-            }else{ return "success";
+            }else{
+                return "success";
             }
 
+        return json_encode($rows->loan_number);
 
     }
 

@@ -19,7 +19,7 @@ class Applicant extends Model
 
     public function applications()
     {
-        return $this->hasMany('App\Application','applicant_id');
+        return $this->hasOne('App\Application','applicant_id','id');
     }
 
     public function grantedloans()
