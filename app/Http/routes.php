@@ -39,6 +39,7 @@ Route::resource('assessments', 'AssessmentController');
 Route::resource('assessments/{id}/questions', 'AssessmentController@question');
 Route::resource('assessments/{id}/response', 'AssessmentController@response');
 Route::resource('assessments/{id}/qestionresponse', 'AssessmentController@qestionresponse');
+Route::resource('assessments/{applicantId}/getQuestionresponse/{assessment_id}', 'AssessmentController@getQuestionresponse');
 Route::resource('finances', 'FinancialTransactionController');
 Route::resource('finances/{period}/{value}/get', 'FinancialTransactionController@recentTransaction');
 Route::resource('homeprint', 'HomeController@getPdf');

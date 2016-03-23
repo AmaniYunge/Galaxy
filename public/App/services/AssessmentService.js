@@ -27,6 +27,7 @@
         service.GetApplicantYearly = GetApplicantYearly;
         service.saveAssessmentResponse = saveAssessmentResponse;
         service.getAssessmentResponse = getAssessmentResponse;
+        service.getQuestionResponse = getQuestionResponse;
         service.max = max;
         return service;
 
@@ -65,6 +66,10 @@
 
         function getAssessmentResponse(response) {
             return $http.post('public/index.php/assessments/'+response+'/qestionresponse', response).then(handleSuccess, handleError('Error creating user'));
+        }
+
+        function getQuestionResponse(applicant_id,assessment_id) {
+            return $http.post('public/index.php/assessments/'+applicant_id+'/getQuestionresponse/'+assessment_id).then(handleSuccess, handleError('Error Loading response'));
         }
 
 

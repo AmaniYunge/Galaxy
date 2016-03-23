@@ -1,5 +1,4 @@
 <div ng-controller="applicantController as applicant">
-
     <div class="col-md-12">
         <div class="panel" >
             <div class="panel-heading">
@@ -30,13 +29,15 @@
                                     </a>
                                 </div>
                                 <div class="media-body">
-                                    <h4 class="media-heading">{{question.description}}</h4>
+                                    <h4 class="media-heading">{{question.description}}&nbsp;&nbsp;<i class="fa fa-check " style="color:#3C763D;" ng-if="questionsQ[question.id].response"></i></h4>
                                     <div class="col-md-2">
                                         <label for="{{question.id}}">Response</label>
-                                        <select class="form-control" id="{{question.id}}" ng-model="answer" ng-change="applicant.saveQuestion(applicant.applicant.id,applicant.selectedAssessment.id,question.id,answer)">
-                                            <option selected="selected" disabled="disabled"></option>
-                                            <option value="YES_{{question.score_for_yes}}">YES</option>
-                                            <option value="NO_{{question.score_for_no}}">NO</option>
+                                        <select class="form-control" id="{{question.id}}" ng-model="answer[question.id]" ng-change="applicant.saveQuestion(applicant.applicant.id,applicant.selectedAssessment.id,question.id,answer[question.id])">
+
+                                            <option value="YES_{{question.score_for_yes}}" ng-if="questionsQ[question.id].answer=='YES'" ng-selected="answer[question.id]">YES</option>
+                                            <option value="NO_{{question.score_for_no}}" ng-if="questionsQ[question.id].answer=='NO'" ng-selected="answer[question.id]">NO</option>
+                                            <option value="YES_{{question.score_for_yes}}" ng-if="!questionsQ[question.id].response||questionsQ[question.id].answer=='NO'">YES</option>
+                                            <option value="NO_{{question.score_for_no}}" ng-if="!questionsQ[question.id].response||questionsQ[question.id].answer=='YES'">NO</option>
                                         </select>
                                     </div>
 

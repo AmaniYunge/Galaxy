@@ -100,7 +100,24 @@
                 if(value.id==loanid){
                     $scope.application.amount_applied = value.principle_amount;
                     $scope.application.code = value.code;
+                    $scope.application.salary = 0;
+
+                    if(value.name.toLowerCase().indexOf("salary")>=0){
+                        $scope.salary = true;
+                        //$scope.application.salary =
+                        angular.forEach($scope.appicantsWithSponsor,function(value,index){
+                            if(value.id==$scope.application.applicant){
+                                $scope.application.salary =  value.salary
+                            }
+                        });
+                        console.log($scope.application.applicant);
+                        console.log($scope.appicantsWithSponsor);
+                    }else{
+                        $scope.salary = false;
+                    }
                 }
+
+
             });
 
         }

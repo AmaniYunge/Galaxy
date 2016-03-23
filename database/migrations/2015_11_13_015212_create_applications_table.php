@@ -21,6 +21,7 @@ class CreateApplicationsTable extends Migration
             $table->string('applied_amount');
             $table->string('amount_granted');
             $table->string('application_fee');
+            $table->string('applicant_salary');
             $table->string('status');
             $table->string('comments');
             $table->string('collateral');

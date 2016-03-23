@@ -82,18 +82,43 @@ class AssessmentController extends Controller
      */
     public function response(Request $request, $id)
     {
-        $response = new Applicantresponse();
-        $response->applicant_id  = $request->applicant;
-        $response->assessment_id = $request->assessment;
-        $response->question_id   = $request->question;
-        $response->answer        = $request->answer;
-        $response->score         = $request->score;
 
-        if(!$response->save()){
-            return "failed";
+        $checkExisteance = DB::table('applicantresponse')
+                ->where('applicantresponse.applicant_id', '=', $request->applicant)
+                ->where('assessment_id', '=', $request->assessment)
+                ->where('question_id', '=', $request->question)->get();
+
+        if($checkExisteance){
+            $response = Applicantresponse::find($checkExisteance[0]->id);
+            $response->applicant_id  = $request->applicant;
+            $response->assessment_id = $request->assessment;
+            $response->question_id   = $request->question;
+            $response->answer        = $request->answer;
+            $response->score         = $request->score;
+
+            if(!$response->save()){
+                return "failed";
+            }else{
+                return "success";
+            }
+
         }else{
-            return "success";
+            $response = new Applicantresponse();
+            $response->applicant_id  = $request->applicant;
+            $response->assessment_id = $request->assessment;
+            $response->question_id   = $request->question;
+            $response->answer        = $request->answer;
+            $response->score         = $request->score;
+
+            if(!$response->save()){
+                return "failed";
+            }else{
+                return "success";
+            }
+
+
         }
+
 
     }
 
@@ -107,6 +132,7 @@ class AssessmentController extends Controller
     {
 
         $responses = DB::table('applicantresponse') ->where('applicantresponse.applicant_id', '=', $id)->get();
+
 
         $response_array = array();
         $assess_array = array();
@@ -156,6 +182,21 @@ class AssessmentController extends Controller
         return json_encode($response_array);
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function getQuestionresponse($applicantId,$assessment_id){
+
+        $responses = DB::table('applicantresponse')
+            ->where('applicantresponse.applicant_id', '=', $applicantId)
+            ->where('assessment_id', '=', $assessment_id)
+            ->get();
+
+        return json_encode($responses);
+    }
 
     /**
      * Update the specified resource in storage.

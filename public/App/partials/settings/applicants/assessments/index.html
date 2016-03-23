@@ -1,8 +1,8 @@
-<div class="col-md-12" >
+<div class="col-md-12"  ng-controller="applicantController as applicant">
     <div class="col-md-12">
         <div class="panel" >
             <div class="panel-heading">
-                <div class="panel-title"> <i class="fa fa-table"></i> Applicant Interviews </div>
+                <div class="panel-title"> <i class="fa fa-table"></i>{{applicant.applicant.first_name}} {{applicant.applicant.middle_name}} {{applicant.applicant.last_name}} | Interviews </div>
                 <div class="panel-field pull-right">
                     <a  ng-href="#/applicant/{{applicantInfo.id}}/interview/add" class="btn btn-sm btn-primary" >New Interview</a>
                 </div>

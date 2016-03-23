@@ -33,6 +33,14 @@
 
 
                   </div>
+                  <div class="form-group">
+                      <label for="occupation_app">Occupation</label>
+                      <select id="occupation_app" name="occupation" type="text"  ng-model="applicant.occupation" ng-change="checkOccupation(applicant.occupation)"  class="form-control" placeholder="Occupation" required="">
+                          <option>Entreprenour</option>
+                          <option>Employed</option>
+                      </select>
+
+                  </div>
 
 
               </div>
@@ -70,6 +78,11 @@
                           <option ng-repeat="group in vm.groups" value="group.id">{{group.name}}</option>
                       </select>
                       </div>
+{{applicant.salary}}
+                  <div class="form-group" ng-if="isEmployed">
+                      <label for="salary">Salary</label>
+                      <input id="salary" name="salary" type="text"  ng-model="applicant.salary"   class="form-control" placeholder="Salary" required="">
+                  </div>
 
               </div>
               </div>
@@ -196,8 +209,8 @@
             </form>
 
             <div class="col-md-12">
-                <div class="alert alert-success " ng-if="success">Applicant <b> {{current.first_name}} {{current.middle_name}} {{current.last_name}}  </b> Registered Successfully.</div>
-                <div class="alert alert-warning" ng-if="failure">Applicant <b> {{current.first_name}} {{current.middle_name}} {{current.last_name}}  </b> Fail Registration.</div>
+                <div class="alert alert-success " ng-if="success">Sonsor <b> {{current.first_name}} {{current.middle_name}} {{current.last_name}}  </b> Registered Successfully.</div>
+                <div class="alert alert-warning" ng-if="failure">Sonsor <b> {{current.first_name}} {{current.middle_name}} {{current.last_name}}  </b> Fail Registration.</div>
             </div>
         </div>
     </div>

@@ -63,6 +63,18 @@
         $scope.current = null;
         $scope.applicant_label = "New Applicant";
         $scope.showSponsorForm = false;
+        $scope.isEmployed = false;
+
+        $scope.checkOccupation = function(occupation){
+
+            if(occupation=='Employed'){
+                $scope.isEmployed = true;
+            }else{
+                $scope.isEmployed = false;
+            }
+
+        }
+
 
         /**
          * save form values
@@ -105,14 +117,17 @@
             ApplicantsponsorService.Create(sponsor,function(response){
                 if(response=="success"){
                     $scope.applicant = null;
+                    $scope.current = sponsor;
                     $scope.success = true;
                     $scope.failure = false;
-                    $timeout(function () {
-                        $location.path("/applicants");
-                        $scope.applicant = null;
-                        $scope.success = false;
-                        $scope.failure = false;
-                    }, 1000);
+
+                    $location.path("/applicants");
+                    //$timeout(function () {
+                    //    $location.path("/applicants");
+                    //    $scope.applicant = null;
+                    //    $scope.success = false;
+                    //    $scope.failure = false;
+                    //}, 1000);
                 }
             },function(){
 
@@ -206,7 +221,7 @@
                 $scope.$watch('applicants',function(newValue,oldOne){
                     $scope.applicantInfo = $filter('filterById')($scope.applicants,$routeParams.id);
 
-                    if($scope.applicantInfo!=null&&$scope.applicantInfo.applications.length>0){
+                    if($scope.applicantInfo!=null&&$scope.applicantInfo.applications!=null&&$scope.applicantInfo.applications.length>0){
                         $scope.pendingApplication = $filter('pendingApplication')($scope.applicantInfo);
 
                         if($scope.pendingApplication=="no application"){
@@ -261,11 +276,26 @@
         applicant.getQuestions  =   function(assessment){
            var assessment =  JSON.parse(assessment);
             applicant.selectedAssessment = assessment;
-            angular.extend(applicant.selectedAssessment,applicant.getLoan($scope.loans,applicant.selectedAssessment.loan_id));
 
+            var loan = applicant.getLoan($scope.loans,applicant.selectedAssessment.loan_id);
+            delete loan['id'];
+            angular.extend(applicant.selectedAssessment,loan);
             $scope.questions = null;
-            AssessmentService.Questions(assessment.id).then(function(data){
-            $scope.questions = data.questions;
+            console.log(applicant.selectedAssessment);
+            $scope.questionsQ = {};
+
+            AssessmentService.Questions(applicant.selectedAssessment.id).then(function(data){
+                AssessmentService.getQuestionResponse($routeParams.id,applicant.selectedAssessment.id).then(function(response){
+                    $scope.answer = {};
+                    angular.forEach(response,function(value,index){
+                        console.log(value);
+                        $scope.questionsQ[value.question_id] = {response:true,answer:value.answer};
+                        $scope.answer[value.question_id] = value.answer+"_"+value.score;
+                    });
+                    $scope.questions = data.questions;
+                },function(){
+                    $scope.questions = data.questions;
+                });
             });
 
         }
@@ -311,7 +341,9 @@
             AssessmentService.GetAll().then(function(data){
                 $scope.assessments = data;
                 angular.forEach($scope.assessments,function(value,index){
-                    angular.extend($scope.assessments[index],applicant.getLoan($scope.loans,value.loan_id));
+                    var loan = applicant.getLoan($scope.loans,value.loan_id);
+                    delete loan['id'];
+                    angular.extend($scope.assessments[index],loan);
                 })
             });
         }
@@ -324,7 +356,7 @@
 
 
         /// chacke if assesment was requested
-        if($location.path().indexOf("interview/add")>=0){
+        if($location.path().indexOf("interview/add")>=0||$location.path().indexOf("/interview")>=0){
             applicant.loadApplicantAssessments($routeParams.id);
             applicant.loadApplicant($routeParams.id);
         }

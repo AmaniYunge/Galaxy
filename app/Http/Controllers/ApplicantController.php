@@ -41,7 +41,8 @@ class ApplicantController extends Controller
         $applicant->postal_address = $request->postal_address;
         $applicant->marital_status = $request->marital_status;
         $applicant->residence      = $request->residence;
-        $applicant->family_size    = $request->family_size;
+        $applicant->occupation    = $request->occupation;
+        $applicant->salary    = $request->salary;
 
 
         if(!$applicant->save()){
@@ -96,6 +97,8 @@ class ApplicantController extends Controller
         $applicant->marital_status = $request->marital_status;
         $applicant->residence = $request->residence;
         $applicant->family_size = $request->family_size;
+        $applicant->occupation    = $request->occupation;
+        $applicant->salary    = $request->salary;
 
 
         if($applicant->save()){

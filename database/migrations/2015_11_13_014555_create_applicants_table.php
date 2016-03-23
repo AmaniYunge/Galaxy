@@ -24,6 +24,8 @@ class CreateApplicantsTable extends Migration
             $table->string('marital_status');
             $table->string('residence');
             $table->string('family_size');
+            $table->string('occupation');
+            $table->string('salary');
             $table->integer('created_by');
             $table->timestamps();
         });

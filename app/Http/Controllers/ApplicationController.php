@@ -95,6 +95,7 @@ class ApplicationController extends Controller
             $application = new Application();
             $application->loan_number   = $loan_number;
             $application->applicant_id   = $request->applicant;
+            $application->applicant_salary   = $request->applicant_salary;
             $application->loan_id        = $request->loan_type;
             $application->applied_amount = $request->amount_applied;
             $application->application_fee = $request->application_fee;
